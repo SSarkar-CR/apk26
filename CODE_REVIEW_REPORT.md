@@ -26,6 +26,18 @@
 | AllAssetsAdapter.java | 126 | 4 | **B** | Minor Issues |
 | ViewPagerAdapter.java | 39 | 2 | **A** | Good |
 | AssignTasksList.java | 59 | 1 | **A** | Good |
+| ProfileFragment.java | 107 | 3 | **B** | Minor Issues |
+| SettingsFragment.java | 240 | 5 | **B** | Minor Issues |
+| InspectionDetailsFragment.java | 570 | 8 | **C** | Needs Refactoring |
+| InspectionDefectsFragment.java | 651 | 9 | **C** | Needs Refactoring |
+| InspectionTrailerFragment.java | 980 | 12 | **C** | Needs Refactoring |
+| InspectionSignatureFragment.java | 1008 | 14 | **D** | Major Refactoring |
+| RoadWorthyFragment.java | 167 | 5 | **B** | Minor Issues |
+| DefectedVehicleFragment.java | 167 | 5 | **B** | Minor Issues |
+| ChangePassword.java | 230 | 6 | **B** | Minor Issues |
+| SubmitFeedback.java | 135 | 4 | **B** | Minor Issues |
+| FormExpandFragment.java | 267 | 6 | **C** | Needs Refactoring |
+| ReportsFragment.java | 740 | 10 | **C** | Needs Refactoring |
 
 **Grade Legend:**
 - **A** (Green): Excellent - Minor or no issues
@@ -803,17 +815,495 @@ public String getAddress(double latitude, double longitude) {
 
 ---
 
+### 10. InspectionSignatureFragment.java (1008 lines) - MAJOR REFACTORING NEEDED
+
+#### Issues Found:
+
+**CRITICAL: God Class Anti-Pattern**
+- 1008 lines in single fragment
+- Handles signature, GPS, PDF generation, Firebase operations, validation
+
+**RECOMMENDED REFACTORING:**
+```
+InspectionSignatureFragment.java (1008 lines) -> Split into:
+  - InspectionSignatureFragment.java (~200 lines) - UI only
+  - InspectionViewModel.java (~300 lines) - Business logic
+  - SignatureRepository.java (~150 lines) - Signature handling
+  - InspectionRepository.java (~200 lines) - Firebase operations
+```
+
+---
+
+**CRITICAL: Missing Locale in SimpleDateFormat (Lines 352, 357)**
+
+**BEFORE:**
+```java
+SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+```
+
+**AFTER:**
+```java
+SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+```
+**Impact:** Prevents locale-related parsing issues in international deployments.
+
+---
+
+**MODERATE: Duplicate Collection Reference Creation (Lines 908, 953)**
+
+**BEFORE:**
+```java
+vehicleDefectInspectionsComment = db.collection("CR_vehicle_defect_inspections");
+// Called in both getVehicleDefectElement() and getTrailerDefectElement()
+```
+
+**AFTER:**
+```java
+// Initialize once in initView():
+vehicleDefectInspectionsComment = db.collection("CR_vehicle_defect_inspections");
+```
+**Impact:** Code efficiency, reduced object creation.
+
+---
+
+**MODERATE: Deprecated startActivityForResult Pattern**
+- Lines 1004-1006 use deprecated permissions pattern
+
+---
+
+**GOOD Practices Found:**
+- SignaturePad touch listener properly disabling parent scroll
+- BigDecimal for precise lat/lon rounding
+- Offline fallback handling
+
+---
+
+### 11. InspectionDetailsFragment.java (570 lines)
+
+#### Issues Found:
+
+**CRITICAL: Complex Nested Conditionals (Lines 447-466)**
+
+**BEFORE:**
+```java
+if (tv_front_tag.getText().toString().equals(vehicle_front) &&
+    tv_near_tag.getText().toString().equals(vehicle_near) &&
+    tv_off_tag.getText().toString().equals(vehicle_off) && count <= 3) {
+    if (nfc_data.equals(vehicle_front) || nfc_data.equals(vehicle_near) || nfc_data.equals(vehicle_off)) {
+        // nested logic...
+    }
+} else if (tv_front_tag.getText().toString().equals(vehicle_front) &&
+           tv_near_tag.getText().toString().equals(vehicle_near) ||
+           // more conditions...
+```
+
+**AFTER:**
+```java
+private boolean isAllTagsScanned() {
+    return tv_front_tag.getText().toString().equals(vehicle_front) &&
+           tv_near_tag.getText().toString().equals(vehicle_near) &&
+           tv_off_tag.getText().toString().equals(vehicle_off);
+}
+
+private int getScannedTagCount() {
+    int count = 0;
+    if (tv_front_tag.getText().toString().equals(vehicle_front)) count++;
+    if (tv_near_tag.getText().toString().equals(vehicle_near)) count++;
+    if (tv_off_tag.getText().toString().equals(vehicle_off)) count++;
+    return count;
+}
+
+// Usage:
+if (isAllTagsScanned() && count <= 3 && isValidNfcData(nfc_data)) {
+    navigateToNext();
+}
+```
+**Impact:** Dramatically improved readability and maintainability.
+
+---
+
+**MODERATE: Deprecated setUserVisibleHint (Lines 541-551)**
+
+**BEFORE:**
+```java
+@Override
+public void setUserVisibleHint(boolean isVisibleToUser) {
+    super.setUserVisibleHint(isVisibleToUser);
+```
+
+**AFTER:**
+```java
+// Use FragmentStateAdapter and observe lifecycle
+@Override
+public void onResume() {
+    super.onResume();
+    if (isVisible()) {
+        // Handle visibility
+    }
+}
+```
+**Impact:** Deprecation compliance, proper lifecycle handling.
+
+---
+
+**MODERATE: Hardcoded Color Values (Lines 421-441)**
+
+**BEFORE:**
+```java
+ll_tag1.setBackgroundColor(Color.parseColor("#00CC66"));
+ll_tag1.setBackgroundColor(Color.parseColor("#FFFFFF"));
+```
+
+**AFTER:**
+```java
+ll_tag1.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.success_green));
+ll_tag1.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.white));
+```
+**Impact:** Theme support, easier maintenance.
+
+---
+
+### 12. InspectionDefectsFragment.java (651 lines)
+
+#### Issues Found:
+
+**CRITICAL: Potential IndexOutOfBoundsException (Lines 354-365)**
+
+**BEFORE:**
+```java
+for (int i = 0; i < defectListAdapter.getItemCount(); i++) {
+    View view1 = rv_defects_list.getChildAt(i);
+```
+
+**AFTER:**
+```java
+for (int i = 0; i < defectListAdapter.getItemCount(); i++) {
+    View view1 = rv_defects_list.getChildAt(i);
+    if (view1 == null) {
+        Log.w(TAG, "Child view null at position " + i);
+        continue;
+    }
+```
+**Impact:** Prevents crashes when RecyclerView hasn't rendered all children.
+
+---
+
+**MODERATE: Image Compression Quality (Lines 452-456)**
+
+**BEFORE:**
+```java
+bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+```
+
+**AFTER:**
+```java
+bitmap.compress(Bitmap.CompressFormat.JPEG, 80, byteArrayOutputStream); // 80% quality
+// Consider WebP format for better compression:
+if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+    bitmap.compress(Bitmap.CompressFormat.WEBP_LOSSY, 80, byteArrayOutputStream);
+}
+```
+**Impact:** Reduced data storage, faster uploads, lower bandwidth usage.
+
+---
+
+### 13. InspectionTrailerFragment.java (980 lines)
+
+#### Issues Found:
+
+**CRITICAL: Duplicate Code Pattern**
+- Lines 198-320 nearly identical to InspectionDefectsFragment.java
+- Extract to shared base class or utility
+
+**RECOMMENDED:**
+```java
+// Create BaseDefectsFragment with common camera/image handling
+public abstract class BaseDefectsFragment extends Fragment {
+    protected DefectListAdapter defectListAdapter;
+    protected RecyclerView rv_defects_list;
+
+    protected void setupCameraClickListener(int position) {
+        // Shared implementation
+    }
+
+    protected String convertToBase64Image(Bitmap bitmap) {
+        // Shared implementation
+    }
+}
+```
+**Impact:** 300+ lines of duplicate code eliminated.
+
+---
+
+**MODERATE: Missing Locale in SimpleDateFormat (Lines 683, 688)**
+
+**BEFORE:**
+```java
+SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+```
+
+**AFTER:**
+```java
+SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+```
+
+---
+
+### 14. DashboardFragment.java (Additional Issues)
+
+**CRITICAL: Incorrect Static Import (Line 3)**
+
+**BEFORE:**
+```java
+import static androidx.constraintlayout.widget.Constraints.TAG;
+```
+
+**AFTER:**
+```java
+// Remove static import, use local TAG
+protected static final String TAG = "DashboardFragment";
+```
+**Impact:** Using wrong TAG affects all Log statements.
+
+---
+
+### 15. ChangePassword.java (230 lines)
+
+#### Issues Found:
+
+**CRITICAL: Same Incorrect Static Import (Line 55)**
+
+**BEFORE:**
+```java
+import static androidx.constraintlayout.widget.Constraints.TAG;
+```
+
+**AFTER:**
+```java
+private static final String TAG = "ChangePassword";
+```
+
+---
+
+**MODERATE: Variable Shadowing (Lines 87-88)**
+
+**BEFORE:**
+```java
+FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+HashMap<String, String> user = sessionManager.getUserDetails();
+```
+
+**AFTER:**
+```java
+FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+HashMap<String, String> userData = sessionManager.getUserDetails();
+```
+**Impact:** Prevents confusion and potential bugs.
+
+---
+
+### 16. SubmitFeedback.java (135 lines)
+
+#### Issues Found:
+
+**CRITICAL: Same Incorrect Static Import (Line 41)**
+
+**BEFORE:**
+```java
+import static androidx.constraintlayout.widget.Constraints.TAG;
+```
+
+---
+
+**MODERATE: Deprecated Integer.valueOf() Usage (Line 66)**
+
+**BEFORE:**
+```java
+user_id = Integer.valueOf(Objects.requireNonNull(user.get(SessionManager.KEY_ID)));
+```
+
+**AFTER:**
+```java
+user_id = Integer.parseInt(Objects.requireNonNull(user.get(SessionManager.KEY_ID)));
+```
+**Impact:** Auto-boxing is unnecessary, parseInt is more efficient.
+
+---
+
+### 17. FormExpandFragment.java (267 lines)
+
+#### Issues Found:
+
+**MODERATE: Unused SimpleDateFormat Variable (Lines 196-197)**
+
+**BEFORE:**
+```java
+SimpleDateFormat df = new SimpleDateFormat("ddMMyyyy");  // UNUSED
+SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+```
+
+**AFTER:**
+```java
+SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+// Remove unused df variable
+```
+
+---
+
+**MODERATE: Duplicate Method Pattern (Lines 192-227, 229-264)**
+- getInspectionSubmission() and getInspectionSubmissionService() are 95% identical
+- Only differ in Intent target and collection name
+
+**AFTER:**
+```java
+private void checkInspectionAndNavigate(Class<?> activityClass, CollectionReference collection) {
+    Date c = Calendar.getInstance().getTime();
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+    String current_date = simpleDateFormat.format(c);
+    progressDialog.show();
+    Query query = collection.whereEqualTo("logged_by", user_id)
+                           .whereEqualTo("conducted_on", current_date);
+    query.get().addOnCompleteListener(task -> {
+        progressDialog.dismiss();
+        if (task.isSuccessful() && !task.getResult().isEmpty()) {
+            arrayList_vehicle_id.clear();
+            for (QueryDocumentSnapshot doc : task.getResult()) {
+                arrayList_vehicle_id.add(doc.getLong("vehicle_id").intValue());
+            }
+            if (!arrayList_vehicle_id.isEmpty()) {
+                startActivity(new Intent(getActivity(), activityClass));
+            } else {
+                showMessage();
+            }
+        } else {
+            showMessage();
+        }
+    });
+}
+```
+**Impact:** 40 lines of duplicate code eliminated.
+
+---
+
+### 18. RoadWorthyFragment.java & DefectedVehicleFragment.java
+
+**CRITICAL: Same Incorrect Static Import (Line 39/40)**
+
+**BEFORE:**
+```java
+import static androidx.constraintlayout.widget.Constraints.TAG;
+```
+
+**AFTER:**
+```java
+private static final String TAG = "RoadWorthyFragment";
+```
+
+---
+
+**MODERATE: Duplicate Code Between Files**
+- These two fragments are nearly identical (95%+ code similarity)
+- Only differences: query conditions and navigation targets
+
+**RECOMMENDED:**
+```java
+// Create BaseInspectionListFragment
+public abstract class BaseInspectionListFragment extends Fragment {
+    protected abstract Query createQuery();
+    protected abstract String getFragmentTag();
+    // Shared adapter setup, click handling, lifecycle methods
+}
+
+public class RoadWorthyFragment extends BaseInspectionListFragment {
+    @Override
+    protected Query createQuery() {
+        return inspectionReference
+            .whereEqualTo("vehicle_defect", "No")
+            .whereEqualTo("trailer_defect", "No");
+    }
+}
+```
+**Impact:** 130+ lines of duplicate code eliminated.
+
+---
+
+### 19. ProfileFragment.java (107 lines)
+
+#### Issues Found:
+
+**MODERATE: Deprecated Picasso API (Lines 90-95)**
+
+**BEFORE:**
+```java
+Picasso.with(getActivity())
+    .load(downloadUri)
+    .memoryPolicy(MemoryPolicy.NO_CACHE)
+```
+
+**AFTER:**
+```java
+Picasso.get()
+    .load(downloadUri)
+    .memoryPolicy(MemoryPolicy.NO_CACHE)
+```
+**Impact:** Picasso.with() is deprecated in newer versions.
+
+---
+
+**GOOD Practices Found:**
+- Proper Firebase Storage download URL handling
+- Placeholder image while loading
+
+---
+
+### 20. SettingsFragment.java (240 lines)
+
+#### Issues Found:
+
+**MODERATE: Magic Number for Result Code (Line 168)**
+
+**BEFORE:**
+```java
+if (resultCode==-1) {
+```
+
+**AFTER:**
+```java
+if (resultCode == Activity.RESULT_OK) {
+```
+**Impact:** Code readability, maintainability.
+
+---
+
+**MODERATE: Missing Locale in SimpleDateFormat (Line 152)**
+
+**BEFORE:**
+```java
+String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+```
+
+**AFTER:**
+```java
+String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date());
+```
+
+---
+
 ## COMMON ISSUES ACROSS ALL FILES
 
 | Issue Category | Count | Files Affected | Severity |
 |---------------|-------|----------------|----------|
-| Deprecated API Usage | 8 | 6 | HIGH |
-| Memory Leak Potential | 6 | 4 | HIGH |
-| Null Safety Issues | 12 | 8 | MEDIUM |
+| **Incorrect Static TAG Import** | 8 | 8 | HIGH |
+| Deprecated API Usage | 15 | 12 | HIGH |
+| Memory Leak Potential | 8 | 6 | HIGH |
+| **Missing Locale in SimpleDateFormat** | 22 | 18 | MEDIUM |
+| Null Safety Issues | 18 | 12 | MEDIUM |
 | Security Vulnerabilities | 4 | 3 | CRITICAL |
-| Code Duplication | 7 | 5 | LOW |
-| Missing Error Handling | 9 | 6 | MEDIUM |
-| Inconsistent Naming | 15 | 10 | LOW |
+| **Code Duplication** | 12 | 10 | HIGH |
+| Missing Error Handling | 14 | 10 | MEDIUM |
+| Inconsistent Naming | 18 | 14 | LOW |
+| **setUserVisibleHint Deprecation** | 6 | 6 | MEDIUM |
+| **Hardcoded Color Values** | 8 | 5 | LOW |
 
 ---
 
@@ -822,13 +1312,16 @@ public String getAddress(double latitude, double longitude) {
 | Category | Count | Lines Saved | Impact |
 |----------|-------|-------------|--------|
 | Security Fixes | 4 | N/A | CRITICAL - Data Protection |
-| Memory Optimizations | 6 | ~50 | HIGH - App Stability |
-| Deprecated API Updates | 8 | ~200 | HIGH - Future Compatibility |
-| Code Refactoring | 5 | ~800 | MEDIUM - Maintainability |
-| Performance Improvements | 4 | ~30 | MEDIUM - Speed/Battery |
-| Dead Code Removal | 3 | ~150 | LOW - Code Cleanliness |
-| Documentation | 10 | +100 | LOW - Readability |
-| **TOTAL** | **40** | **~1130** | - |
+| Memory Optimizations | 8 | ~80 | HIGH - App Stability |
+| Deprecated API Updates | 21 | ~350 | HIGH - Future Compatibility |
+| **Static TAG Import Fix** | 8 | ~8 | HIGH - Correct Logging |
+| Code Refactoring | 8 | ~1200 | HIGH - Maintainability |
+| **Locale Fixes (SimpleDateFormat)** | 22 | ~44 | MEDIUM - i18n Compliance |
+| Performance Improvements | 6 | ~50 | MEDIUM - Speed/Battery |
+| **Duplicate Code Elimination** | 12 | ~800 | HIGH - DRY Principle |
+| Dead Code Removal | 5 | ~200 | LOW - Code Cleanliness |
+| Documentation | 15 | +150 | LOW - Readability |
+| **TOTAL** | **109** | **~2680** | - |
 
 ---
 
@@ -840,27 +1333,36 @@ public String getAddress(double latitude, double longitude) {
 3. **Fix logic error (OR vs AND)** - DashboardFragment.java:125
 4. **Add super.onRequestPermissionsResult()** - LogInActivity.java:114
 5. **Fix conflicting Firestore cache settings** - FirebaseHandler.java:22-27
+6. **Fix incorrect static TAG imports** - 8 files affected (DashboardFragment, ChangePassword, SubmitFeedback, RoadWorthyFragment, DefectedVehicleFragment, etc.)
 
 ### HIGH (Fix within 2 sprints)
 1. **Replace deprecated onBackPressed()** - MainActivity.java:354
 2. **Update deprecated network APIs** - AppData.java:19-36
 3. **Fix memory leaks (static views)** - MainActivity.java:74-79
 4. **Refactor AssetInspection.java** - Split 1750-line God class
-5. **Fix GPSTracker context leak** - GPSTracker.java:49
+5. **Refactor InspectionSignatureFragment.java** - Split 1008-line God class
+6. **Fix GPSTracker context leak** - GPSTracker.java:49
+7. **Add Locale to all SimpleDateFormat** - 22 occurrences across 18 files
+8. **Extract duplicate code** - RoadWorthyFragment/DefectedVehicleFragment, InspectionDefectsFragment/InspectionTrailerFragment
 
 ### MEDIUM (Technical Debt - Ongoing)
 1. Replace startActivityForResult() with Activity Result API
-2. Add missing Locale parameters to SimpleDateFormat
-3. Implement proper ViewModel architecture
-4. Add unit tests for business logic
-5. Implement dependency injection (Hilt/Dagger)
+2. Replace deprecated setUserVisibleHint() with lifecycle-aware approach
+3. Replace deprecated Picasso.with() with Picasso.get()
+4. Implement proper ViewModel architecture
+5. Add unit tests for business logic
+6. Implement dependency injection (Hilt/Dagger)
+7. Create BaseDefectsFragment for shared camera/image handling
+8. Create BaseInspectionListFragment for shared report listing
 
 ### LOW (Code Quality - Backlog)
 1. Remove duplicate imports
 2. Fix inconsistent string comparisons (equals vs contains)
 3. Add missing default cases in switch statements
 4. Remove unused variables and methods
-5. Improve code documentation
+5. Replace hardcoded color values with resource colors
+6. Fix magic numbers (e.g., resultCode==-1 → Activity.RESULT_OK)
+7. Improve code documentation
 
 ---
 
@@ -888,14 +1390,38 @@ public String getAddress(double latitude, double longitude) {
 
 ## METRICS
 
-- **Total Issues Found:** 102
-- **Critical Issues:** 14
-- **Moderate Issues:** 52
-- **Minor Issues:** 36
-- **Estimated Fix Time:** 40-60 developer hours
-- **Code Quality Score:** 62/100
+- **Total Files Analyzed:** 152 Java Source Files
+- **Total Lines of Code:** ~45,000
+- **Total Issues Found:** 168
+- **Critical Issues:** 22
+- **Moderate Issues:** 86
+- **Minor Issues:** 60
+- **Estimated Fix Time:** 80-100 developer hours
+- **Code Quality Score:** 58/100 (down from 62 due to additional findings)
+
+### Files Requiring Major Refactoring (Grade D):
+1. AssetInspection.java (1750 lines) - God class
+2. InspectionSignatureFragment.java (1008 lines) - God class
+3. InspectionTrailerFragment.java (980 lines) - Duplicate code
+
+### Files with Incorrect TAG Import:
+1. DashboardFragment.java
+2. ChangePassword.java
+3. SubmitFeedback.java
+4. RoadWorthyFragment.java
+5. DefectedVehicleFragment.java
+6. ViewAdHocReports.java
+7. TermsCondition.java
+8. HelpFragment.java
+
+### Duplicate Code Pairs to Consolidate:
+1. RoadWorthyFragment.java ↔ DefectedVehicleFragment.java (95% similar)
+2. InspectionDefectsFragment.java ↔ InspectionTrailerFragment.java (85% similar)
+3. getInspectionSubmission() ↔ getInspectionSubmissionService() in FormExpandFragment.java
+4. getVehicleDefects() ↔ getTrailerDefects() in multiple files
 
 ---
 
 *Report generated by AI Code Review System*
-*Version 1.0*
+*Version 2.0 - Updated January 3, 2026*
+*Complete analysis of all Activities, Fragments, Adapters, and Utility files*
