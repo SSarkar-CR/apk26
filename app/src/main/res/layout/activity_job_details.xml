@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sv_ad_hoc_report"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_shade_one"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:fadingEdge="none">
+    <LinearLayout
+        android:id="@+id/ll_assign_tasks"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_shade_one"
+        android:paddingBottom="@dimen/header_height_dashboard"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/cl_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height_dashboard"
+            android:background="@color/white">
+            <ImageView
+                android:id="@+id/iv_cross"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_24"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/closed"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="34dp"
+                android:text="Tasks"
+                android:textColor="@color/black_shade_five"
+                android:textSize="@dimen/small_text_size"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_assign_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16"
+            android:fadingEdge="none"
+            android:overScrollMode="never">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

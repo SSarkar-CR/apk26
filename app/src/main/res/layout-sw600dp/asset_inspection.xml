@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sv_ad_hoc_report"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_one"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:fadingEdge="none">
+    <LinearLayout
+        android:id="@+id/ll_peeking_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_one"
+        android:paddingBottom="@dimen/header_height_dashboard"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/cl_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height_dashboard"
+            android:background="@color/white">
+
+            <ImageView
+                android:id="@+id/iv_cross"
+                android:layout_width="@dimen/margin_20"
+                android:layout_height="@dimen/margin_20"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_24"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/closed"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="34dp"
+                android:text="Asset Inspection"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/small_text_size"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/bt_nfc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_button_background"
+            android:text="Scan NFC"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:layout_margin="@dimen/margin_20"
+            android:padding="@dimen/margin_16"
+            android:textSize="@dimen/text_size_16sp" />
+        <Button
+            android:id="@+id/bt_qr_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_button_background"
+            android:text="Scan QR"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:layout_margin="@dimen/margin_20"
+            android:padding="@dimen/margin_16"
+            android:textSize="@dimen/text_size_16sp" />
+        <Button
+            android:id="@+id/bt_id_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blue_button_background"
+            android:text="ID Search"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:layout_margin="@dimen/margin_20"
+            android:padding="@dimen/margin_16"
+            android:textSize="@dimen/text_size_16sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Asset Variant Name :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Test data"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Asset Id :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="0001"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Asset Name :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingBottom="@dimen/margin_12">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1.5"
+                android:text="Key Date Status :"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/tv_current_asset_status"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Inspection Status :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Last Inspected Location :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Test Location"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Last Inspected By :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Test User"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Last Routine Inspection :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="18/07/2023"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Next Routine Inspection Due :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="24/07/2023"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Next Thorough Exam Due :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="24/07/2023"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Next MOT Due :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="24/07/2023"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Next Service Due :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="24/07/2023"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Next Gas Calibration Due :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="24/07/2023"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/bt_view_certificates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_18"
+            android:background="@drawable/purple_button_background"
+            android:text="View Certificates"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:padding="@dimen/input_field_padding"
+            android:textSize="@dimen/input_text_size" />
+        <Button
+            android:id="@+id/bt_asset_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginBottom="@dimen/margin_18"
+            android:background="@drawable/blue_button_background"
+            android:text="Asset History"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:padding="@dimen/input_field_padding"
+            android:textSize="@dimen/input_text_size" />
+                <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/asset_inspection_caution"
+            android:textSize="@dimen/text_size_12sp"
+            android:background="@color/grey_shade_one"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingBottom="@dimen/margin_12"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="No damage visible, safe to use/ compliant asset"
+            android:textSize="@dimen/text_size_12sp"
+            android:background="@color/white"
+            android:textColor="#7CFC00"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingBottom="@dimen/margin_6"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Defected, safe to use/Raise low priority service notice."
+            android:textSize="@dimen/text_size_12sp"
+            android:background="@color/white"
+            android:textColor="#FFDE0B"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingBottom="@dimen/margin_6"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Defected, not safe to use/Raised urgent service notice and remove asset from use"
+            android:textSize="@dimen/text_size_12sp"
+            android:background="@color/white"
+            android:textColor="#EB3109"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingBottom="@dimen/margin_6"/>
+        <include layout="@layout/asset_elements_list_row"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Add Asset Image :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+            <ImageView
+                android:layout_weight="2"
+                android:id="@+id/iv_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/camera"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ll_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:visibility="gone">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4"
+                android:layout_weight="1"
+                android:background="@drawable/camera_bg">
+                <ImageView
+                    android:id="@+id/iv_photo_one"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginEnd="@dimen/margin_4"
+                    android:layout_marginStart="@dimen/margin_4"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/placeholder_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/iv_close_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/iv_photo_one"
+                    android:layout_marginEnd="-3dp"
+                    app:srcCompat="@drawable/cross" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_photo_one"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="6dp"
+                    android:text="Photo- 1"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_12sp" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_4"
+                android:layout_weight="1"
+                android:background="@drawable/camera_bg">
+                <ImageView
+                    android:id="@+id/iv_photo_two"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginEnd="@dimen/margin_4"
+                    android:layout_marginStart="@dimen/margin_4"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/placeholder_image"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/iv_close_two"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/iv_photo_two"
+                    android:layout_marginEnd="-3dp"
+                    app:srcCompat="@drawable/cross" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/iv_photo_two"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="13dp"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginTop="6dp"
+                    android:text="Photo- 2"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_12sp" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Is the inspector currently logged in ?"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/bt_print_ticket_yes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_2"
+                android:text="Yes"
+                android:background="@drawable/edit_text_background"
+                android:textSize="@dimen/text_size_16sp"
+                android:textAllCaps="false"
+                android:textColor="@color/black_shade_two" />
+            <Button
+                android:layout_weight="1"
+                android:id="@+id/bt_print_ticket_no"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_2"
+                android:text="No"
+                android:background="@drawable/edit_text_background"
+                android:textSize="@dimen/text_size_16sp"
+                android:textAllCaps="false"
+                android:textColor="@color/black_shade_two" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="name of inspector :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+            <EditText
+                android:id="@+id/et_inspector_name"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="0dp"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:maxLength="20"
+                android:gravity="top|left"
+                android:layout_marginRight="0dp"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingEnd="@dimen/margin_12"
+                android:text="Signature of inspector :"
+                android:textColor="@color/black_shade_two"
+                android:layout_gravity="center_vertical"
+                android:textSize="@dimen/text_size_16sp"/>
+            <Button
+                android:layout_weight="2"
+                android:id="@+id/bt_operator_sign"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_here"
+                android:background="@drawable/purple_button_background"
+                android:textSize="@dimen/text_size_16sp"
+                android:textAllCaps="false"
+                android:textColor="@color/black_shade_three" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/bt_submit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_18"
+            android:background="@drawable/blue_button_background_two"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:padding="@dimen/input_field_padding"
+            android:textSize="@dimen/input_text_size" />
+        <Button
+            android:id="@+id/bt_discard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/edit_text_background_two"
+            android:padding="@dimen/input_field_padding"
+            android:text="Discard"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/input_text_size" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

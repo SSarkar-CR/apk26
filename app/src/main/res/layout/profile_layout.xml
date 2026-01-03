@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color_one"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:layout_margin="@dimen/margin_16"
+            android:background="@drawable/user_background">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="45dp"
+                android:layout_centerInParent="true"
+                card_view:cardPreventCornerOverlap="true">
+
+                <ImageView
+                    android:id="@+id/iv_profile_picture"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/user" />
+
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Graeme Wicks"
+            android:textSize="@dimen/extra_small_text_size"
+            android:textColor="@color/black_shade_three"
+            android:layout_marginBottom="@dimen/margin_8"/>
+        <TextView
+            android:id="@+id/tv_userRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Driver"
+            android:textSize="@dimen/extra_small_text_size"
+            android:textColor="@color/black_shade_three"
+            android:layout_marginBottom="@dimen/margin_24"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_12"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="User ID"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_14sp" />
+        <TextView
+            android:id="@+id/tv_user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="graeme0828"
+            android:textColor="@color/black_shade_three"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_4">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="Email"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_14sp" />
+        <TextView
+            android:id="@+id/tv_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="graemewicks@gmail.com"
+            android:textColor="@color/black_shade_three"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

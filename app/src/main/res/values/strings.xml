@@ -1,0 +1,194 @@
+<resources>
+    <string name="app_name">Crate</string>
+    <string name="app_version">V_AM_2.1</string>
+    <string name="splash_text_line_one">Capture and analyse data in \n realtime straight from your Crate</string>
+    <string name="forgot_pass">Enter the email address associated  \n with your account.</string>
+    <string name="send_email">"Forgot your password? Don\'t worry it happens to the best of us.\nEnter the registered email/username for the account you\'re trying \nto access and we\'ll send you a link to reset your account."</string>
+    <string name="reset_pass_success">"We\'ve sent you an email to reset your password,\nfollow the link in the email and your account should\nbe up and running in no time."</string>
+    <string name="reset_pass_confirmation">"Password Reset \n Email Send"</string>
+    <string name="daily_progress">"Overall \nDaily Progress"</string>
+    <string name="feedback_text">"That\'s great!\nTell us what we got right"</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="reports">Reports</string>
+    <string name="view_dashboard">View Dashboard</string>
+    <string name="form">Forms</string>
+    <string name="notification">Notification</string>
+    <string name="no_notification"><font style="bold" size="16">No Notifications Right Now!</font>\n<font color="#6b6f7a" size="16">You are up-to-date! would work well</font></string>
+    <string name="search">Search</string>
+    <string name="begin_search">Type to begin search&#8230;</string>
+    <string name="looking_for_something">Looking for something?</string>
+    <string name="how_can_help">How can we help&#8230;?</string>
+    <string name="settings">Settings</string>
+    <string name="favourites">Edit Favourites</string>
+    <string name="popular">Popular</string>
+    <string name="help_title">Help Title</string>
+    <string name="help">Help</string>
+    <string name="web_forms">Web Forms</string>
+    <string name="ad_hoc_reports">Ad-Hoc Reports</string>
+    <string name="defect_reports">Defect Reports</string>
+    <string name="roadworthy_reports">Roadworthy Reports</string>
+    <string name="transport">Transport</string>
+    <string name="nfc_tag_manager">NFC Tag Manager</string>
+    <string name="ad_hoc_report">Ad-Hoc Report</string>
+    <string name="waste_transfer_note">Waste Transfer Note</string>
+    <string name="claire_form">CL:AIRE TICKET</string>
+    <string name="waste_transfer_form">Waste Transfer Form</string>
+    <string name="supply_form">Supply Form</string>
+    <string name="diesel_delivery">Diesel Delivery</string>
+    <string name="assign_site">Assign Site</string>
+    <string name="service_driver_note">Service Driver Note</string>
+    <string name="start_task">Start Task</string>
+    <string name="end_of_day">Add Fuel/ End Of Day</string>
+    <string name="finish_day">Finish Day</string>
+    <string name="continue_day">Continue Day</string>
+    <string name="close">Close</string>
+    <string name="nfc_tag_manager_header">Please select the NFC tag you would like to manage.</string>
+    <string name="vehicle_reg">Vehicle Reg No:</string>
+    <string name="reg_no">Enter Reg No:</string>
+    <string name="driver">Driver</string>
+    <string name="date">Date :</string>
+    <string name="date_raised">Date Raised</string>
+    <string name="defected_vehicles">Defected Vehicles</string>
+    <string name="roadworthy">Roadworthy Vehicles</string>
+    <string name="details">Details</string>
+    <string name="defects">Defects</string>
+    <string name="trailer">Trailer</string>
+    <string name="signature">Signature</string>
+    <string name="change_pass">Change My Password</string>
+    <string name="change_password">Change Password</string>
+    <string name="submit_feedback">Submit Feedback</string>
+    <string name="terms_condition">Terms &amp; Conditions</string>
+    <string name="carry_out_inspection">Carry Out Inspection</string>
+    <string name="view_inspection">View Inspection</string>
+    <string name="attach_to_front">Scan the Tag \nattached to \nthe Front</string>
+    <string name="attach_to_near">Scan the Tag \nattached to \nthe Near</string>
+    <string name="attach_to_off">Scan the Tag \nattached to \nthe Off</string>
+    <string name="attach_to_cabin">Scan the Tag \nattached to \nthe Cabin</string>
+    <string name="vehicle_defect_report"><font size="24">Vehicle Defect Report</font>\n<font color="#6b6f7a" size="16">Workshop Manager</font></string>
+    <string name="defect_report_id">Defect Report ID</string>
+    <string name="report_id">Report ID</string>
+    <string name="reset_pass_conditions">(Password must be between 8 to 32 characters long.Password must be combined with characters and at least one digit .)</string>
+    <string name="drivers_name">Driver Name :</string>
+    <string name="gross_weight">Gross Weight:</string>
+    <string name="waste_carrier_no">Waste Carrier No.:</string>
+    <string name="operator">Operator :</string>
+    <string name="container_size">*Container Size:</string>
+    <string name="external_ticket_no">External Ticket No :</string>
+    <string name="waiting_time">Waiting Time:</string>
+    @string/waiting_time
+    <string name="project_no">Project No. :</string>
+    <string name="sic_code">SIC Code:</string>
+    <string name="site_permit_no">Delivery Site Permit No. :</string>
+    <string name="reference">Reference :</string>
+    <string name="add_image">Add Images:</string>
+    <string name="haulier">Haulier :</string>
+    <string name="ticket_no">Ticket no. :</string>
+    <string name="current_site">Current Site :</string>
+    <string name="form_type">Form Type :</string>
+    <string name="current_site_address">Current Site Address:</string>
+    <string name="current_site_caution">You have not submitted the site selection form yet.Please fill that form first otherwise will not able to record new tag.</string>
+    <string name="sign_caution_one">Please ensure the signatories of this document have carefully read, understood and verified the contents of this conveyance note prior to leaving the collection point.</string>
+    <string name="sign_caution_three">By signing this digital conveyance note (material delivery ticket) we confirm that we are complying with the material management plan for this project in full accordance with the latest version of the
+CL:AIRE definition of waste: development industry code of practice (CL:AIRE
+CoP) for the direct transfer of clean naturally occurring soil and mineral materials from
+the donor site(producer/transferee) to the receiver site (delivery transfer point) by the
+haulier(transferee).</string>
+    <string name="sign_here">Sign here</string>
+    <string name="operator_signature">*Operator\'s Signature :</string>
+    <string name="third_party_signature">*3rd Party Signature :</string>
+    <string name="print_ticket">*Would you like to print this ticket :</string>
+    <string name="material_value_caution">* You have selected a high value material, please capture a photo for company records.</string>
+    <string name="sign_caution_two">By signing this digital ticket we confirm that we have fulfilled our duty to apply the waste hierarchy as required by regulation 12 of the waste (England and Wales) regulations 2011.</string>
+    <string name="vehicle_no">Vehicle Reg.</string>
+    <string name="daily_inspection">Conduct Daily Vehicle Inspection</string>
+    <string name="complete_conveyance_note">Complete Conveyance Note</string>
+    <string name="edit_conveyance_note">Edit Conveyance Note</string>
+    <string name="permit_no">*Permit No. :</string>
+    <string name="supply_ticket">Complete Supply Ticket</string>
+    <string name="change_current_vehicle">Change Current Vehicle</string>
+    <string name="vehicle_trailer_no">Vehicle/Trailer Reg.</string>
+    <string name="material">*Material :</string>
+    <string name="delivery_site">*Delivery Site :</string>
+    <string name="vehicle_part">Vehicle part</string>
+    <string name="guid">Guid</string>
+    <string name="fleet_serial_no">Trailer/Fleet Serial No.</string>
+    <string name="manufacturer">Manufacturer</string>
+    <string name="model">Model</string>
+    <string name="reported_by">Reported by</string>
+    <string name="reported_date">Reported date</string>
+    <string name="test_text">data</string>
+    <string name="tag_hint">Scan NFC Tag</string>
+    <string name="nfc_tag_text_vehicle">Please scan NFC Tags placed\n on the vehicle</string>
+    <string name="nfc_tag_text_trailer">Please scan NFC Tags placed\n on the trailer</string>
+    <string name="front_tag">Front Tag</string>
+    <string name="completion_tag">Completion Tag\n(inside the cabin)</string>
+    <string name="near_tag">Near-Side(Rear)Tag</string>
+    <string name="off_tag">Off-Side(Rear)Tag</string>
+    <string name="ready_to_scan">Ready To Scan</string>
+    <string name="ready_to_scan_text">Hold your device in close proximity to the \ncorresponding NFC tag(please
+                                      note you may have to \ntouch the tag with the device to gain a connection)</string>
+    <string name="failed">Failed</string>
+    <string name="tag_scan_successful">Tag Scan Successful</string>
+    <string name="tag_successfully_read">Tag successfully read</string>
+    <string name="change_pass_successfully">Password Changed Successfully</string>
+    <string name="feedback_submitted">Feedback successfully submitted \nThank You</string>
+    <string name="change_picture_content">1. On your android phone open the Crate app. \n2.From left menu click on "Settings"\n3.Then click
+                                             on camera logo on profile picture.\n4.Now capture your picture to update your profile picture.</string>
+    <string name="change_password_content">1. On your android phone open the Crate app. \n2.From left menu click on "Settings"\n3.Then click
+                                             on change password.\n4.Now put your new password and submit.</string>
+    <string name="odometer_reading">Odometer Reading</string>
+    <string name="resolution">Resolution</string>
+    <string name="close_issue">*Once you closed an issue you can\'t reopen it</string>
+    <string name="gps_acquired">GPS acquired : just now</string>
+    <string name="driver_signature">*Driver\'s Signature</string>
+    <string name="manager_signature">Workshop Manager\'s Signature</string>
+    <string name="my_signature">My Signature</string>
+    <string name="next_page">Next Page</string>
+    <string name="previous_page">Previous Page</string>
+    <string name="defects_instruction_text">Have all of the following items been checked and in good working order? please select Yes["\u2713"] if item is in good working order, or No["\u2717"] to highlight a defect.Once a defect is highlighted , please complete the required information.</string>
+    <string name="view_inspection_attachment_text">Car batteries typically have a part of the casing that\'s translucent \nso you can always keep an eye on your battery\'s fluid level.If the \nfluid level is below
+     theead plates:(energy conductor:) inside.</string>
+    <string name="workshop_manager_comment">Workshop Manager\'s comment:</string>
+    <string name="workshop_manager">Workshop Manager</string>
+    <string name="success">Success</string>
+    <string name="my_profile">My Profile</string>
+    <string name="terms_condition_title">Terms and Condition</string>
+    <string name="will_be_found_by">Will be found by 20/08</string>
+    <string name="additional_or_reported">Previous Defect highlighted and not closed out,is this\ndefect additional or reported</string>
+    <string name="defect_description">Defect Description:</string>
+    <string name="form_submitted">Your form is \nnow submitted</string>
+    <string name="pre_existing_defects">Pre existing defects</string>
+    <string name="defect_additonal_reported">Defect found is additional or reported</string>
+    <string name="date_time">Date &amp; Time:</string>
+    <string name="end_of_day_dialog">You have no task assigned.</string>
+    <string name="asset_certificates_caution">*Please note certificates are only viewable when you are online.They are not viewable
+    when using Crate in offline mode.Certificates will open in your browser.</string>
+    <string name="asset_history">*Please note you can only see the history of this asset for up to 6 months from this asset
+    last thorough examination.</string>
+    <string name="date_revalidation">Please chose the new date for this thorough examination certification.</string>
+    <string name="date_revalidation_caution">Please note, the re-validation of date should only be done in-line with a competent
+    person/business confirming this asset has successfully returned a satisfactory result to the relevant regimes requirements.
+    Some of this may be required by UK law and should only be updated in-line with the relevant guidelines.</string>
+    <string name="date_revalidation_confirmation">I confirmed the new dates are correct and this asset has returned a
+     successful thorough examination result for this regime type.</string>
+    <string name="off_hire_confirmation">   I can confirm this asset is no longer required in it\'s current location. I acknowledge this asset location will now be
+        changed and I am still responsible for this asset until it has been removed from this location.</string>
+    <string name="off_hire_caution">A request will be sent to the relevant team for the collection of this asset. \nIf this asset is a hired asset,please remove any identification tags before collection.</string>
+    <string name="defect_checkbox_caution">I confirmed this defect has been rectified.If this box is left unchecked, the
+    asset will remain defected. Comments will be saved.</string>
+    <string name="id_reference_change">Please scan the tag/code twice to confirm new identifier.</string>
+    <string name="id_reference_change_caution">The assets identification method assign to the asset type. For any question
+    contact to the system admin.</string>
+    <string name="asset_inspection_caution">Can this asset be safely used ? Please check the relevant parts/elements of the asset
+    as detailed below and record the condition of the asset.</string>
+    <string name="create_asset_inspection_caution">Upon successful creation of a new asset, please carry out an inspection to begin the assets inspection routine. </string>
+    <string name="nfc_exist_dialog">"This tag is already in use and assigned to another asset. To use this tag please edit the asset linked to the tag, or use a new tag that is not assigned to an asset."</string>
+    <string name="asset_groupId_caution">This Asset Group is identified by Asset Details, such as : \n-Group ID \n-Asset Number</string>
+    <string name="safety_checks_caution">Perform the following safety checks and record the results.</string>
+    <string name="revalidate_inspection_caution">Any failed safety check below will automatically marked the asset as defective. Update with care.</string>
+    <string name="revalidate_safety_threshold_caution">If a value is above a threshold below, the asset will be marked as defective.</string>
+    <string name="site_location">Site Location :</string>
+    <string name="delivery_reference">Site Reference :</string>
+    <string name="container_type">Container Type :</string>
+</resources>

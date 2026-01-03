@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_size"
+    android:background="@color/nav_header_background"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/margin_24"
+    android:paddingTop="@dimen/margin_40"
+    android:paddingRight="@dimen/margin_32"
+    android:paddingBottom="@dimen/margin_24"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/iv_user_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@drawable/profile" />
+
+    <TextView
+        android:id="@+id/tv_userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User Name"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin_16"
+        android:layout_toRightOf="@+id/iv_user_image"
+        android:textSize="@dimen/text_size_14sp"
+        android:textColor="@color/black_shade_two"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+    <TextView
+        android:id="@+id/tv_view_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/iv_user_image"
+        android:layout_below="@+id/tv_userName"
+        android:text="View Profile"
+        android:textSize="@dimen/text_size_14sp"
+        android:textColor="@color/black_shade_three"
+        android:layout_marginStart="@dimen/margin_16"/>
+
+</RelativeLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_one"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_web_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_24"
+        android:layout_margin="@dimen/margin_24"
+        android:background="@drawable/form_list_bg">
+
+        <TextView
+            android:id="@+id/tv_form_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nfc_tag_manager"
+            android:layout_centerVertical="true"
+            android:drawablePadding="@dimen/margin_16"
+            android:textColor="@color/white"
+            android:textSize="@dimen/extra_small_text_size"/>
+        <ImageView
+            android:id="@+id/iv_form_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/form_arrow"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

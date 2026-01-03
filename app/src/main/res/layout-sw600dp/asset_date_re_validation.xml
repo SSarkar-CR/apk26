@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sv_ad_hoc_report"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_one"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:fadingEdge="none">
+    <LinearLayout
+        android:id="@+id/ll_peeking_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_one"
+        android:paddingBottom="@dimen/header_height_dashboard"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/cl_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height_dashboard"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="34dp"
+                android:text="Date Re-Validation"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/small_text_size"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Asset Variant Name :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Test data"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Asset Id :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="0001"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Asset Name :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Testing Drill"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_shade_one"
+            android:text="@string/date_revalidation"
+            android:textSize="@dimen/small_text_size"
+            android:padding="@dimen/margin_10" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/red"
+            android:text="@string/date_revalidation_caution"
+            android:textSize="@dimen/text_size_14sp"
+            android:padding="@dimen/margin_10" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background_blue"
+            android:layout_margin="@dimen/margin_16"
+            android:padding="@dimen/margin_6"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_date_picker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_24"
+                android:src="@drawable/calender" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_toEndOf="@id/iv_date_picker"
+                android:text="Please Select New Date"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edit_text_background_blue"
+            android:layout_margin="@dimen/margin_16"
+            android:padding="@dimen/margin_6"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_date_picker_second"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_24"
+                android:src="@drawable/calender" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_toEndOf="@id/iv_date_picker_second"
+                android:text="Please Confirm New Date"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/date_revalidation_confirmation"
+            android:textColor="@color/black_shade_two"
+            android:background="@color/grey_shade_one"
+            android:padding="@dimen/margin_4"/>
+        <Button
+            android:id="@+id/bt_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_18"
+            android:background="@drawable/blue_button_background"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:padding="@dimen/input_field_padding"
+            android:textSize="@dimen/input_text_size" />
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_18"
+            android:background="@drawable/blue_button_background"
+            android:text="Go Back"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:padding="@dimen/input_field_padding"
+            android:textSize="@dimen/input_text_size" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/list_item_background"
+    android:layout_marginBottom="@dimen/margin_12"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_defect_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Defect"
+        android:layout_margin="@dimen/margin_12"
+        android:textSize="@dimen/extra_small_text_size"
+        android:textColor="@color/black_shade_three"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/background_color_one"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/camera_bg"
+            android:layout_margin="@dimen/margin_4"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_photo_one"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="@dimen/margin_4"
+                android:layout_marginEnd="@dimen/margin_4"
+                android:layout_marginTop="@dimen/margin_4"
+                android:src="@drawable/placeholder_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="5dp"
+                android:text="Photo- 1"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/black_shade_two"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_photo_one" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/camera_bg"
+            android:layout_margin="@dimen/margin_4"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/iv_photo_two"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="@dimen/margin_4"
+                android:layout_marginEnd="@dimen/margin_4"
+                android:layout_marginTop="@dimen/margin_4"
+                android:src="@drawable/placeholder_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="13dp"
+                android:layout_marginBottom="5dp"
+                android:text="Photo- 2"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/black_shade_two"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_photo_two" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/defects_details_bg"
+        android:layout_margin="@dimen/margin_16">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/defect_description"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_14sp"
+            android:layout_margin="@dimen/margin_16" />
+        <TextView
+            android:id="@+id/tv_defect_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_inspection_attachment_text"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_10sp"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:maxLines="3"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:layout_marginBottom="@dimen/margin_16"/>
+
+    </LinearLayout>
+
+</LinearLayout>

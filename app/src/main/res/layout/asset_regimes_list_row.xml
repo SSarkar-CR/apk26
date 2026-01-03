@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_12"
+    android:layout_marginRight="@dimen/margin_12"
+    android:layout_marginBottom="@dimen/margin_4">
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2">
+        <TextView
+            android:id="@+id/tv_regime_element_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <EditText
+            android:id="@+id/et_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:padding="5dp"
+            android:layout_margin="@dimen/margin_10"
+            android:gravity="top|left"
+            android:background="@drawable/edit_text_background"
+            android:textColor="@color/black_shade_three" />
+        <TextView
+            android:id="@+id/tv_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_10"
+            android:layout_marginBottom="@dimen/margin_10"
+            android:textColor="@color/black_shade_two"
+            android:textSize="@dimen/text_size_16sp"
+            android:text="18-11-2024"
+            android:textStyle="bold" />
+        <RadioGroup
+            android:id="@+id/rg_value_yes_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginEnd="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_12"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_yes"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="Yes"
+                android:textSize="@dimen/text_size_16sp"
+                android:buttonTint="@color/blue_shade_one"
+                android:textColor="@color/black_shade_two"
+                android:layout_margin="@dimen/margin_8"/>
+            <RadioButton
+                android:id="@+id/rb_no"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                android:textSize="@dimen/text_size_16sp"
+                android:buttonTint="@color/blue_shade_one"
+                android:textColor="@color/black_shade_two"
+                android:layout_margin="@dimen/margin_8"/>
+        </RadioGroup>
+        <RadioGroup
+            android:id="@+id/rg_value_on_off"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginEnd="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_12"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_on"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="On"
+                android:textSize="@dimen/text_size_16sp"
+                android:buttonTint="@color/blue_shade_one"
+                android:textColor="@color/black_shade_two"
+                android:layout_margin="@dimen/margin_8"/>
+            <RadioButton
+                android:id="@+id/rb_off"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Off"
+                android:textSize="@dimen/text_size_16sp"
+                android:buttonTint="@color/blue_shade_one"
+                android:textColor="@color/black_shade_two"
+                android:layout_margin="@dimen/margin_8"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/list_item_background"
+    android:layout_marginBottom="@dimen/margin_4"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_defects"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_view_vehicle_defects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/defects"
+            android:textColor="@color/black_shade_three"
+            android:padding="@dimen/margin_16"/>
+        <ImageView
+            android:id="@+id/iv_view_vehicle_defects_expand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/view_defects_arrow_unselect"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="@dimen/margin_16"/>
+        <ImageView
+            android:id="@+id/iv_view_vehicle_defects_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/view_defects_arrow_select"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:paddingRight="@dimen/margin_16"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_view_defects"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pre_existing_defects"
+        android:textSize="@dimen/text_size_12sp"
+        android:textColor="@color/black_shade_two"
+        android:paddingStart="@dimen/margin_16"/>
+
+    <TextView
+        android:id="@+id/tv_pre_existing_defect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_12sp"
+        android:textColor="@color/black_shade_three"
+        android:paddingStart="@dimen/margin_16"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/grey_shade_one"
+        android:layout_marginTop="@dimen/margin_12"
+        android:layout_marginBottom="@dimen/margin_12"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:text="@string/workshop_manager_comment"
+        android:textSize="@dimen/text_size_12sp"
+        android:drawablePadding="@dimen/margin_12"
+        android:textColor="@color/black_shade_two"
+        android:paddingStart="@dimen/margin_16"/>
+
+     <ImageView
+         android:layout_width="0dp"
+         android:layout_height="wrap_content"
+         android:layout_weight="1"
+         android:src="@drawable/error"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_workshop_managers_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_size_12sp"
+        android:textStyle="bold"
+        android:textColor="@color/black_shade_three"
+        android:paddingStart="@dimen/margin_16"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/grey_shade_one"
+        android:layout_marginTop="@dimen/margin_12"
+        android:layout_marginBottom="@dimen/margin_12"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/defect_additonal_reported"
+        android:textSize="@dimen/text_size_12sp"
+        android:textColor="@color/black_shade_two"
+        android:paddingStart="@dimen/margin_16"/>
+
+    <TextView
+        android:id="@+id/tv_additional_reported"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_12sp"
+        android:textColor="@color/black_shade_three"
+        android:paddingStart="@dimen/margin_16"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/grey_shade_one"
+        android:layout_marginTop="@dimen/margin_12"
+        android:layout_marginBottom="@dimen/margin_12"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/defect_description"
+        android:textSize="@dimen/text_size_12sp"
+        android:textColor="@color/black_shade_two"
+        android:paddingStart="@dimen/margin_16"/>
+
+    <TextView
+        android:id="@+id/tv_defect_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_size_12sp"
+        android:textColor="@color/black_shade_three"
+        android:paddingStart="@dimen/margin_16"
+        android:paddingBottom="@dimen/margin_16"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_one"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:fadingEdge="none">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_one"
+        android:paddingBottom="@dimen/footer_height"
+        android:orientation="vertical">
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      android:background="@color/white"
+      android:paddingStart="@dimen/margin_24"
+      android:paddingTop="@dimen/margin_12"
+      android:paddingBottom="@dimen/margin_12"
+      android:layout_marginTop="@dimen/margin_4"
+      android:layout_marginBottom="@dimen/margin_2">
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/drivers_name"
+          android:textSize="@dimen/text_size_16sp"
+          android:textColor="@color/black_shade_two"/>
+      <TextView
+          android:id="@+id/tv_driver_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textStyle="bold"
+          android:textColor="@color/black_shade_three"
+          android:textCursorDrawable="@null"
+          android:background="@android:color/transparent"
+          android:textColorHint="@color/black_shade_three"
+          android:textSize="@dimen/text_size_16sp" />
+
+  </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:paddingStart="@dimen/margin_24"
+        android:paddingTop="@dimen/margin_12"
+        android:paddingBottom="@dimen/margin_12"
+        android:layout_marginBottom="@dimen/margin_2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/vehicle_no"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"/>
+
+        <TextView
+            android:id="@+id/tv_registration_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:textColor="@color/black_shade_three"
+            android:textColorHint="@color/black_shade_three"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_size_16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:paddingStart="@dimen/margin_24"
+        android:paddingTop="@dimen/margin_12"
+        android:paddingBottom="@dimen/margin_12"
+        android:layout_marginBottom="@dimen/margin_2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fleet_serial_no"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"/>
+        <TextView
+            android:id="@+id/tv_fleet_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions"
+            android:textStyle="bold"
+            android:textColor="@color/black_shade_three"
+            android:textCursorDrawable="@null"
+            android:background="@android:color/transparent"
+            android:textColorHint="@color/black_shade_three"
+            android:textSize="@dimen/text_size_16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:paddingStart="@dimen/margin_24"
+        android:paddingTop="@dimen/margin_12"
+        android:paddingBottom="@dimen/margin_12"
+        android:layout_marginBottom="@dimen/margin_2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/manufacturer"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"/>
+        <TextView
+            android:id="@+id/tv_manufacturer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions"
+            android:textStyle="bold"
+            android:textColor="@color/black_shade_three"
+            android:textCursorDrawable="@null"
+            android:background="@android:color/transparent"
+            android:textColorHint="@color/black_shade_three"
+            android:textSize="@dimen/text_size_16sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:paddingStart="@dimen/margin_24"
+        android:paddingTop="@dimen/margin_12"
+        android:paddingBottom="@dimen/margin_12">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/model"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"/>
+
+        <TextView
+            android:id="@+id/tv_model"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textNoSuggestions"
+            android:textStyle="bold"
+            android:textColor="@color/black_shade_three"
+            android:textCursorDrawable="@null"
+            android:background="@android:color/transparent"
+            android:textColorHint="@color/black_shade_three"
+            android:textSize="@dimen/text_size_16sp" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nfc_tag_text_vehicle"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textSize="@dimen/extra_small_text_size"
+        android:textColor="@color/black_shade_three"
+        android:layout_margin="@dimen/margin_16"/>
+
+    <LinearLayout
+    android:id="@+id/ll_tag1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/nfc_bg_focus"
+    android:layout_margin="@dimen/margin_16">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/front_tag"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <TextView
+                android:id="@+id/tv_front_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_16sp"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+        <View
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:background="@color/grey_shade_one">
+    </View>
+    <ImageView
+        android:id="@+id/iv_nfcTag_front"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nfc"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"/>
+
+   </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tag2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/nfc_bg_focus"
+        android:layout_marginStart="@dimen/margin_16"
+        android:layout_marginEnd="@dimen/margin_16">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingStart="@dimen/margin_16"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/near_tag"
+                android:textSize="@dimen/text_size_16sp"
+                android:textColor="@color/black_shade_three"/>
+            <TextView
+                android:id="@+id/tv_near_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent"
+                android:textSize="@dimen/text_size_16sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey_shade_one">
+        </View>
+        <ImageView
+            android:id="@+id/iv_nfcTag_near"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nfc"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tag3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/nfc_bg_focus"
+        android:layout_margin="@dimen/margin_16">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:paddingStart="@dimen/margin_16"
+            android:layout_weight="2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/off_tag"
+                android:textSize="@dimen/text_size_16sp"
+                android:textColor="@color/black_shade_three"/>
+            <TextView
+                android:id="@+id/tv_off_tag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                android:textColor="@color/black"
+                android:background="@android:color/transparent"
+                android:textSize="@dimen/text_size_16sp" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/grey_shade_one">
+        </View>
+        <ImageView
+            android:id="@+id/iv_nfcTag_off"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/nfc"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,132 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.1109375" />
+        <entry key="app/src/main/res/drawable-hdpi/edit_text_background_blue.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/drawable-v24/blue_button_background_two.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/drawable-v24/edit_text_background.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/drawable-v24/edit_text_background_two.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/drawable-v24/login_button_background.xml" value="0.13541666666666666" />
+        <entry key="app/src/main/res/drawable-xxhdpi/defects_details_bg.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/drawable-xxhdpi/nfc_bg_focus.xml" value="0.11666666666666667" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/blue_button_background.xml" value="0.159375" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/blue_gradiant_background.xml" value="0.159375" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/check_box_selector.xml" value="0.11666666666666667" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/checked.xml" value="0.11666666666666667" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/edit_text_background_blue_curved.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/green_button_background.xml" value="0.159375" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/green_circle.xml" value="0.1375" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/green_gradiant_background.xml" value="0.159375" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/grey_circle.xml" value="0.1375" />
+        <entry key="app/src/main/res/drawable-xxxhdpi/un_checked.xml" value="0.11666666666666667" />
+        <entry key="app/src/main/res/drawable/action.xml" value="0.11666666666666667" />
+        <entry key="app/src/main/res/drawable/bg_divider.xml" value="0.11666666666666667" />
+        <entry key="app/src/main/res/drawable/black_button_background.xml" value="0.159375" />
+        <entry key="app/src/main/res/drawable/defect_moderate.xml" value="0.15208333333333332" />
+        <entry key="app/src/main/res/drawable/edit_text_background_blue_solid.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/drawable/edit_text_focus.xml" value="0.14895833333333333" />
+        <entry key="app/src/main/res/drawable/green_background_two.xml" value="0.159375" />
+        <entry key="app/src/main/res/drawable/moderate_unselected.xml" value="0.15208333333333332" />
+        <entry key="app/src/main/res/drawable/progress_animation.xml" value="0.11927083333333334" />
+        <entry key="app/src/main/res/drawable/purple_background_two.xml" value="0.159375" />
+        <entry key="app/src/main/res/layout-sw600dp/am_assign_site_layout.xml" value="0.109765625" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_certificates.xml" value="0.25" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_date_management.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_date_re_validation.xml" value="0.3218219434096175" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_details.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_elements.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_elements_list_row.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_forms.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_forms_layout.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_history.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_inspection.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_management_dashboard.xml" value="0.165" />
+        <entry key="app/src/main/res/layout-sw600dp/asset_management_dashboard_new.xml" value="0.107421875" />
+        <entry key="app/src/main/res/layout-sw600dp/defect_close_out_regimes.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw600dp/inspection_list_row.xml" value="0.165" />
+        <entry key="app/src/main/res/layout-sw600dp/view_asset_history.xml" value="0.1" />
+        <entry key="app/src/main/res/layout-sw600dp/view_inspection_element_row.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_job_details.xml" value="0.14479166666666668" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_view_certificates.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/ad_hoc_layout.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/ad_hoc_list_item.xml" value="0.1328125" />
+        <entry key="app/src/main/res/layout/adhoc_defect_row.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/adhoc_defect_row_trailer.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/all_asset_layout.xml" value="0.12135416666666667" />
+        <entry key="app/src/main/res/layout/all_assets_list_row.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/am_assign_site_layout.xml" value="0.14635416666666667" />
+        <entry key="app/src/main/res/layout/asset_certificates.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/asset_date_management.xml" value="0.14635416666666667" />
+        <entry key="app/src/main/res/layout/asset_date_management_list_row.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/asset_date_re_validation.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/asset_details.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout/asset_details_regimes_list.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/asset_elements.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/asset_elements_defects_list_row.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/asset_elements_list_row.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/asset_forms.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout/asset_forms_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/asset_history.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/asset_inspection.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/asset_main.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/asset_management_dashboard.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/asset_management_dashboard_new.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/asset_nav_header.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/asset_off_hire.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/asset_regimes_list_row.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/asset_view_certificates_row.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/assign_site_layout.xml" value="0.14635416666666667" />
+        <entry key="app/src/main/res/layout/close_element_defect.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/close_element_defects.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/close_regime_defect.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/compliant_asset_layout.xml" value="0.113671875" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.11770833333333333" />
+        <entry key="app/src/main/res/layout/create_asset_form.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/dashboard_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/defect_close_out.xml" value="0.23266423357664234" />
+        <entry key="app/src/main/res/layout/defect_close_out_regimes.xml" value="0.11770833333333333" />
+        <entry key="app/src/main/res/layout/edit_safety_indicators.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/form_expand_layout.xml" value="0.128125" />
+        <entry key="app/src/main/res/layout/id_reference_change.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/inspection_defects_layout.xml" value="0.1515625" />
+        <entry key="app/src/main/res/layout/inspection_defects_list_row.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/inspection_due_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/inspection_list_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/inspection_list_row.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/issue_management.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/issue_management_list_row.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/login_layout.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/manage_asset.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/my_task.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/my_tasks.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/nav_header_main.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/nfc_tag_manager_layout.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/non_compliant_asset_layout.xml" value="0.12135416666666667" />
+        <entry key="app/src/main/res/layout/regime_elements_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/roadworthy_layout.xml" value="0.12135416666666667" />
+        <entry key="app/src/main/res/layout/spinner_custom_layout.xml" value="0.2630208333333333" />
+        <entry key="app/src/main/res/layout/supply_form_operator.xml" value="0.20088105726872246" />
+        <entry key="app/src/main/res/layout/view_ad_hoc_defects_row.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/view_asset_history.xml" value="0.12916666666666668" />
+        <entry key="app/src/main/res/layout/view_inspection_defects_wm.xml" value="0.1328125" />
+        <entry key="app/src/main/res/layout/view_inspection_defects_wm_row.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/view_inspection_element_row.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/waste_transfer_delivery.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/waste_transfer_form_driver.xml" value="0.1359375" />
+        <entry key="app/src/main/res/layout/waste_transfer_form_operator.xml" value="0.19964189794091317" />
+        <entry key="app/src/main/res/menu/activity_main_drawer.xml" value="0.128125" />
+        <entry key="app/src/main/res/menu/asset_main_drawer.xml" value="0.125" />
+        <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1359375" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_21" default="true" project-jdk-name="jbr-21" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

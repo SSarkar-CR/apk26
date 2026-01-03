@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color_one"
+    android:fadingEdge="none"
+    android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_color_one"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/footer_height">
+
+        <RadioGroup
+            android:id="@+id/rg_reports"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_12"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:background="@drawable/nfc_background"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_defect_reports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8"
+                android:buttonTint="@color/blue_shade_one"
+                android:text="@string/defect_reports"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <RadioButton
+                android:id="@+id/rb_roadworthy_reports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8"
+                android:buttonTint="@color/blue_shade_one"
+                android:text="@string/roadworthy_reports"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <RadioButton
+                android:id="@+id/rb_ad_hoc_reports"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8"
+                android:buttonTint="@color/blue_shade_one"
+                android:text="@string/ad_hoc_reports"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp" />
+
+            <RadioButton
+                android:id="@+id/rb_task_completed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8"
+                android:buttonTint="@color/blue_shade_one"
+                android:text="Completed Tasks"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp" />
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_edit_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_12"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_task_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_task_by_driver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black_shade_two"
+            android:textSize="@dimen/text_size_16sp"
+            android:text="Driver Tickets :"
+            android:layout_marginLeft="@dimen/margin_24"
+            android:layout_marginTop="@dimen/margin_12"
+            android:visibility="gone"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_roadworthy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16"
+            android:fadingEdge="none"
+            android:overScrollMode="never">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_operator_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_24"
+            android:layout_marginEnd="@dimen/margin_16"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_task_by_operator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"
+                android:text="Operator Tickets :"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_edit_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_button_background"
+                android:text="Edit Task"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_16sp"
+                android:padding="@dimen/margin_8"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_driver_operator_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_16"
+            android:fadingEdge="none"
+            android:overScrollMode="never"
+            android:visibility="gone">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

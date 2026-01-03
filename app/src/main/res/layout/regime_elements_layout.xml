@@ -1,0 +1,1398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/grey_shade_three">
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_1"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_1"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_1"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_1"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_1"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_2"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_2"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_2"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_2"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_2"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_3"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_3"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_3"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_3"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_3"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_4"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_4"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_4"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_4"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_4"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_5"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_5"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_5"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_5"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_5"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_6"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_6"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_6"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_6"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_6"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_7"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_7"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_7"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_7"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_7"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_8"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_8"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_8"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_8"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_8"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_9"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_9"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_9"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_9"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_9"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_9"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_regime_element_10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_marginBottom="@dimen/margin_2"
+        android:visibility="gone">
+        <TextView
+            android:id="@+id/tv_regime_element_name_10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Regime Element :"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_6"
+            android:paddingEnd="@dimen/margin_6" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/et_service_due_hours_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:padding="5dp"
+                android:layout_margin="@dimen/margin_10"
+                android:gravity="top|left"
+                android:background="@drawable/edit_text_background"
+                android:textColor="@color/black_shade_three"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/rl_date_picker_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_16"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_16"
+                android:background="@drawable/edit_text_background_blue"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin_6"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_date_picker_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:src="@drawable/calender" />
+
+                <TextView
+                    android:id="@+id/tv_date_picker_10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="@dimen/margin_24"
+                    android:layout_toEndOf="@id/iv_date_picker_10"
+                    android:text="Please Select New Date"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <RadioGroup
+                android:id="@+id/rg_yes_no_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_yes_10"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Yes"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_no_10"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/rg_on_off_10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_24"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:layout_marginTop="@dimen/margin_12"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <RadioButton
+                    android:id="@+id/rb_on_10"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="On"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+                <RadioButton
+                    android:id="@+id/rb_off_10"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Off"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:buttonTint="@color/blue_shade_one"
+                    android:textColor="@color/black_shade_two"
+                    android:layout_margin="@dimen/margin_8"/>
+            </RadioGroup>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/sv_manager_resolution"
+    android:overScrollMode="never"
+    android:fadingEdge="none"
+    android:background="@color/background_color_one">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:paddingBottom="@dimen/footer_height"
+       android:orientation="vertical">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@color/background_color_one"
+          android:paddingBottom="@dimen/margin_16"
+          android:orientation="vertical">
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:background="@color/white"
+             android:paddingStart="@dimen/margin_24"
+             android:paddingTop="@dimen/margin_12"
+             android:paddingBottom="@dimen/margin_12"
+             android:layout_marginBottom="@dimen/margin_2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/report_id"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp"/>
+            <TextView
+                android:id="@+id/tv_report_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/black_shade_three"
+                android:textStyle="bold"/>
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:background="@color/white"
+             android:paddingStart="@dimen/margin_24"
+             android:paddingTop="@dimen/margin_12"
+             android:paddingBottom="@dimen/margin_12"
+             android:layout_marginBottom="@dimen/margin_2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reported_by"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp"/>
+            <TextView
+                android:id="@+id/tv_reported_by"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/black_shade_three"
+                android:textStyle="bold"/>
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="vertical"
+             android:background="@color/white"
+             android:paddingStart="@dimen/margin_24"
+             android:paddingTop="@dimen/margin_12"
+             android:paddingBottom="@dimen/margin_12"
+             android:layout_marginBottom="@dimen/margin_2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/reported_date"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp"/>
+            <TextView
+                android:id="@+id/tv_reported_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_12sp"
+                android:textColor="@color/black_shade_three"
+                android:textStyle="bold"/>
+
+         </LinearLayout>
+
+      </LinearLayout>
+
+      <CheckBox
+          android:id="@+id/checkBox"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="Close the issue?"
+          android:buttonTint="@color/blue_shade_one"
+          android:textSize="@dimen/text_size_12sp"
+          android:textColor="@color/black_shade_two"
+          android:layout_marginStart="@dimen/margin_16" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/close_issue"
+          android:textColor="@color/black_shade_two"
+          android:textSize="@dimen/text_size_10sp"
+          android:layout_marginStart="@dimen/margin_32"
+          android:layout_marginBottom="@dimen/margin_12"/>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_marginStart="@dimen/margin_16"
+       android:layout_marginEnd="@dimen/margin_16"
+       android:background="@drawable/list_item_background">
+
+<!--      <TextView-->
+<!--          android:layout_width="wrap_content"-->
+<!--          android:layout_height="wrap_content"-->
+<!--          android:text="@string/manager_signature"-->
+<!--          android:textColor="@color/black_shade_three"-->
+<!--          android:layout_gravity="center_horizontal"-->
+<!--          android:padding="@dimen/margin_12"/>-->
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:background="@drawable/nfc_background_select"
+          android:layout_marginTop="@dimen/margin_12"
+          android:layout_marginStart="@dimen/margin_16"
+          android:layout_marginEnd="@dimen/margin_16"
+          android:layout_marginBottom="@dimen/margin_16">
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:text="@string/manager_signature"
+              android:background="@drawable/my_sign_bg"
+              android:textColor="@color/blue_shade_one"
+              android:gravity="center_horizontal"
+              android:padding="@dimen/margin_12"/>
+
+         <com.github.gcacace.signaturepad.views.SignaturePad
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             android:id="@+id/signature_manager"
+             android:layout_width="match_parent"
+             android:layout_margin="@dimen/margin_4"
+             android:layout_height="150dp"
+             app:penColor="@android:color/black" />
+      </LinearLayout>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginEnd="@dimen/margin_16"
+          android:layout_marginBottom="@dimen/margin_12">
+
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:gravity="center_vertical"
+             android:visibility="invisible"
+             android:layout_marginStart="@dimen/margin_8">
+            <ImageView
+                android:id="@+id/iv_black_pen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/black_pen"
+                android:padding="@dimen/margin_8"/>
+            <ImageView
+                android:id="@+id/iv_red_pen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/red_pen"
+                android:padding="@dimen/margin_8"/>
+            <ImageView
+                android:id="@+id/iv_blue_pen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/blue_pen"
+                android:padding="@dimen/margin_8"/>
+
+         </LinearLayout>
+
+         <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal"
+             android:layout_gravity="center_vertical"
+             android:gravity="end">
+
+            <TextView
+                android:id="@+id/tv_clear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/nfc_bg_focus"
+                android:text="Clear"
+                android:layout_gravity="end"
+                android:textAllCaps="false"
+                android:textSize="@dimen/extra_small_text_size"
+                android:paddingStart="@dimen/margin_8"
+                android:paddingEnd="@dimen/margin_8"
+                android:paddingTop="@dimen/margin_4"
+                android:paddingBottom="@dimen/margin_4"
+                android:layout_marginEnd="@dimen/margin_12"
+                android:textColor="@color/black_shade_three"/>
+
+         </LinearLayout>
+      </LinearLayout>
+   </LinearLayout>
+   <Button
+       android:id="@+id/bt_submit_inspection"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@drawable/login_button_background"
+       android:text="Submit Defect Report"
+       android:layout_margin="@dimen/margin_16"
+       android:textAllCaps="false"
+       android:textColor="@color/white"
+       android:padding="@dimen/input_field_padding"
+       android:textSize="@dimen/input_text_size" />
+
+   </LinearLayout>
+</ScrollView>

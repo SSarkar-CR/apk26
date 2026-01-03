@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_one"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/indicator_height"
+        android:orientation="vertical"
+        android:background="@color/white">
+
+    <com.badoualy.stepperindicator.StepperIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:stpi_circleColor="@color/grey_shade_one"
+        app:stpi_lineColor="@color/grey_shade_one"
+        app:stpi_indicatorColor="@color/blue_shade_two"
+        app:stpi_circleRadius="@dimen/indicator_radius"
+        app:stpi_lineDoneColor="@color/blue_shade_two"
+        app:stpi_stepCount="4"/>
+    </LinearLayout>
+
+    <com.crate.crateam.utility.CustomViewPagerInspection
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:overScrollMode="never"
+        android:fadingEdge="none"/>
+
+</LinearLayout>

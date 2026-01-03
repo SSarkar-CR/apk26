@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    android:fadingEdge="none"
+    android:background="@color/white">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/margin_48"
+        android:paddingBottom="@dimen/footer_height"
+        android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/smiley"
+        android:layout_marginBottom="@dimen/margin_12"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="@dimen/margin_32"
+        android:gravity="center_horizontal"
+        android:text="@string/feedback_text"
+        android:textColor="@color/login_text"
+        android:textSize="@dimen/extra_small_text_size" />
+
+    <EditText
+        android:id="@+id/et_feedback_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="16dp"
+        android:textColorHint="@color/edit_text_textColor"
+        android:background="@drawable/edit_text_focus"
+        android:padding="@dimen/input_field_padding"
+        android:textSize="@dimen/input_text_size"
+        android:textColor="@color/black_shade_three"
+        android:inputType="text"
+        android:importantForAutofill="no"
+        android:hint="Title"
+        app:layout_constraintBottom_toTopOf="@+id/et_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/et_feedback_body"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="32dp"
+        android:textColorHint="@color/edit_text_textColor"
+        android:background="@drawable/edit_text_focus"
+        android:padding="@dimen/input_field_padding"
+        android:textSize="@dimen/input_text_size"
+        android:minLines="5"
+        android:gravity="start"
+        android:textColor="@color/black_shade_three"
+        android:inputType="text"
+        android:hint="Feedback" />
+
+    <Button
+        android:id="@+id/bt_submit_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/login_button_background"
+        android:padding="@dimen/input_field_padding"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/input_text_size" />
+    </LinearLayout>
+</ScrollView>

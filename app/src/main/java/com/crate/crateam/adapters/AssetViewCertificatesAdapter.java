@@ -1,0 +1,74 @@
+package com.crate.crateam.adapters;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView.ViewHolder;
+import com.crate.crateam.R;
+import org.jetbrains.annotations.NotNull;
+import java.util.ArrayList;
+
+public class AssetViewCertificatesAdapter extends RecyclerView.Adapter<ViewHolder>{
+
+    ArrayList<String> assetInspectionElementList;
+    private Context context;
+    private OnViewClickListener mlistener;
+
+    public interface OnViewClickListener{
+        void onViewClick(int position);
+    }
+
+    public void setOnItemClickListener(OnViewClickListener listener){
+        mlistener = listener;
+    }
+
+    public AssetViewCertificatesAdapter(Context context, ArrayList<String>  assetInspectionElementList) {
+        this.context = context;
+        this.assetInspectionElementList = assetInspectionElementList;
+    }
+
+    @NotNull
+    @Override
+    public MainListItem onCreateViewHolder(ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.asset_view_certificates_row, parent, false);
+        return new MainListItem(view,mlistener);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        MainListItem mainListItem = (MainListItem) holder;
+        mainListItem.tv_regime_element_name.setText(assetInspectionElementList.get(position));
+    }
+
+    @Override
+    public int getItemCount() {
+        return assetInspectionElementList.size();
+    }
+
+     public class MainListItem extends ViewHolder {
+         private TextView tv_regime_element_name,tv_date;
+         private ImageView iv_view;
+        public MainListItem(View itemView,final OnViewClickListener listener) {
+            super(itemView);
+            tv_regime_element_name = itemView.findViewById(R.id.tv_regime_element_name);
+            tv_date = itemView.findViewById(R.id.tv_date);
+            iv_view= itemView.findViewById(R.id.iv_view);
+            iv_view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener!= null){
+                        int position = getAdapterPosition();
+                        if (position!=RecyclerView.NO_POSITION){
+                            listener.onViewClick(position);
+                        }
+                    }
+                }
+            });
+        }
+    }
+}

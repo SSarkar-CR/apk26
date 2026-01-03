@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_one"
+    android:paddingBottom="@dimen/footer_height"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rl_no_attachments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/background_no_defect"/>
+        <TextView
+            android:id="@+id/tv_no_attachments"
+            android:text="No Attachments Found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_48"
+            android:paddingTop="@dimen/margin_24"
+            android:paddingBottom="@dimen/margin_24"
+            android:paddingStart="@dimen/margin_48"
+            android:paddingEnd="@dimen/margin_48"
+            android:background="@drawable/edit_text_background_blue_solid"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/text_size_16sp"
+            android:textColor="@color/black_shade_two"
+            android:gravity="center" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_view_attachments_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:fadingEdge="none">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</LinearLayout>

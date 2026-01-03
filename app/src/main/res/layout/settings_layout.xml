@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background_color_one"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="@dimen/margin_16"
+            android:background="@drawable/user_background">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                card_view:cardCornerRadius="45dp"
+                android:layout_centerInParent="true"
+                card_view:cardPreventCornerOverlap="true">
+
+                <ImageView
+                    android:id="@+id/iv_profile_pic"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/user" />
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:id="@+id/iv_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="-14dp"
+                android:layout_marginBottom="-12dp"
+                android:src="@drawable/camera"/>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Name"
+            android:textSize="@dimen/extra_small_text_size"
+            android:textColor="@color/black_shade_three"
+            android:layout_marginBottom="@dimen/margin_24"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_change_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_12">
+
+        <TextView
+            android:id="@+id/tv_change_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/change_pass"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_14sp" />
+        <ImageView
+            android:id="@+id/iv_change_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/view_defects_arrow_unselect"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_feedback"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_4">
+
+        <TextView
+            android:id="@+id/tv_submit_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/submit_feedback"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_14sp" />
+        <ImageView
+            android:id="@+id/iv_submit_feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/view_defects_arrow_unselect"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_terms_condition"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:padding="@dimen/margin_16"
+        android:layout_marginTop="@dimen/margin_4">
+
+        <TextView
+            android:id="@+id/tv_terms_conditions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/terms_condition"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_14sp" />
+        <ImageView
+            android:id="@+id/iv_terms_condition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/view_defects_arrow_unselect"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</LinearLayout>

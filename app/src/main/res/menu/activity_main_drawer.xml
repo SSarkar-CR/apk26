@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/search"
+            android:title="Search"/>
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/settings"
+            android:title="Settings"/>
+        <item
+            android:id="@+id/nav_help"
+            android:icon="@drawable/help"
+            android:title="Help"/>
+        <item
+            android:id="@+id/nav_edit_favourites"
+            android:icon="@drawable/edit_favourites"
+            android:title="Edit favourites"/>
+        <item
+            android:id="@+id/nav_web_forms"
+            android:icon="@drawable/web_forms"
+            android:title="Web forms"/>
+        <item
+            android:id="@+id/nav_assign_site"
+            android:icon="@drawable/web_forms"
+            android:title="Assign Site"/>
+        <item
+            android:id="@+id/nav_asset_management"
+            android:icon="@drawable/web_forms"
+            android:title="Asset Management"/>
+    </group>
+</menu>

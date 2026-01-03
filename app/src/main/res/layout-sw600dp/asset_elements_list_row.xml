@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_12"
+    android:layout_marginRight="@dimen/margin_12"
+    android:layout_marginBottom="@dimen/margin_4">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/list_item_background"
+            android:layout_margin="@dimen/margin_1"
+            android:padding="@dimen/margin_14">
+
+            <TextView
+                android:id="@+id/tv_defectType1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_no1"
+                android:maxLines="3"
+                android:paddingRight="@dimen/margin_4"
+                android:text="Fluid Level"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp" />
+            <CheckBox
+                android:id="@+id/cb_checked1"
+                android:visibility="invisible"
+                android:buttonTint="@color/blue_shade_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_defect_no1"/>
+
+            <ImageView
+                android:id="@+id/iv_defect_yes1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:src="@drawable/yes_unselected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_moderate1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:layout_toLeftOf="@+id/iv_defect_yes1"
+                android:src="@drawable/moderate_selected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_no1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_moderate1"
+                android:src="@drawable/no_unselected"
+                android:tag="select" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/list_item_background"
+            android:layout_margin="@dimen/margin_1"
+            android:padding="@dimen/margin_14">
+
+            <TextView
+                android:id="@+id/tv_defectType2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_no2"
+                android:maxLines="3"
+                android:paddingRight="@dimen/margin_4"
+                android:text="Hydraulics"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp" />
+            <CheckBox
+                android:id="@+id/cb_checked2"
+                android:visibility="invisible"
+                android:buttonTint="@color/blue_shade_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_defect_no2"/>
+
+            <ImageView
+                android:id="@+id/iv_defect_yes2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:src="@drawable/yes_unselected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_moderate2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:layout_toLeftOf="@+id/iv_defect_yes2"
+                android:src="@drawable/moderate_selected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_no2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_moderate2"
+                android:src="@drawable/no_unselected"
+                android:tag="select" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/list_item_background"
+            android:layout_margin="@dimen/margin_1"
+            android:padding="@dimen/margin_14">
+
+            <TextView
+                android:id="@+id/tv_defectType3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_no3"
+                android:maxLines="3"
+                android:paddingRight="@dimen/margin_4"
+                android:text="Operating Levers"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp" />
+            <CheckBox
+                android:id="@+id/cb_checked3"
+                android:visibility="invisible"
+                android:buttonTint="@color/blue_shade_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_defect_no3"/>
+
+            <ImageView
+                android:id="@+id/iv_defect_yes3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:src="@drawable/yes_unselected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_moderate3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:layout_toLeftOf="@+id/iv_defect_yes3"
+                android:src="@drawable/moderate_selected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_no3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_moderate3"
+                android:src="@drawable/no_unselected"
+                android:tag="select" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/list_item_background"
+            android:layout_margin="@dimen/margin_1"
+            android:padding="@dimen/margin_14">
+
+            <TextView
+                android:id="@+id/tv_defectType4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_no4"
+                android:maxLines="3"
+                android:paddingRight="@dimen/margin_4"
+                android:text="Lights"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp" />
+            <CheckBox
+                android:id="@+id/cb_checked4"
+                android:visibility="invisible"
+                android:buttonTint="@color/blue_shade_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_defect_no4"/>
+
+            <ImageView
+                android:id="@+id/iv_defect_yes4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:src="@drawable/yes_unselected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_moderate4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:layout_toLeftOf="@+id/iv_defect_yes4"
+                android:src="@drawable/moderate_selected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_no4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_moderate4"
+                android:src="@drawable/no_unselected"
+                android:tag="select" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/list_item_background"
+            android:layout_margin="@dimen/margin_1"
+            android:padding="@dimen/margin_14">
+
+            <TextView
+                android:id="@+id/tv_defectType5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_no5"
+                android:maxLines="3"
+                android:paddingRight="@dimen/margin_4"
+                android:text="Hazard Beacon"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp" />
+            <CheckBox
+                android:id="@+id/cb_checked5"
+                android:visibility="invisible"
+                android:buttonTint="@color/blue_shade_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_defect_no5"/>
+
+            <ImageView
+                android:id="@+id/iv_defect_yes5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:src="@drawable/yes_unselected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_moderate5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:layout_toLeftOf="@+id/iv_defect_yes5"
+                android:src="@drawable/moderate_selected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_no5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_moderate5"
+                android:src="@drawable/no_unselected"
+                android:tag="select" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/list_item_background"
+            android:layout_margin="@dimen/margin_1"
+            android:padding="@dimen/margin_14">
+
+            <TextView
+                android:id="@+id/tv_defectType6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_no6"
+                android:maxLines="3"
+                android:paddingRight="@dimen/margin_4"
+                android:text="PWAS"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp" />
+            <CheckBox
+                android:id="@+id/cb_checked6"
+                android:visibility="invisible"
+                android:buttonTint="@color/blue_shade_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_defect_no6"/>
+
+            <ImageView
+                android:id="@+id/iv_defect_yes6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:src="@drawable/yes_unselected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_moderate6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:layout_toLeftOf="@+id/iv_defect_yes6"
+                android:src="@drawable/moderate_selected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_no6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_moderate6"
+                android:src="@drawable/no_unselected"
+                android:tag="select" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/list_item_background"
+            android:layout_margin="@dimen/margin_1"
+            android:padding="@dimen/margin_14">
+
+            <TextView
+                android:id="@+id/tv_defectType7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_no7"
+                android:maxLines="3"
+                android:paddingRight="@dimen/margin_4"
+                android:text="Windows"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp" />
+            <CheckBox
+                android:id="@+id/cb_checked7"
+                android:visibility="invisible"
+                android:buttonTint="@color/blue_shade_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_defect_no7"/>
+
+            <ImageView
+                android:id="@+id/iv_defect_yes7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:src="@drawable/yes_unselected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_moderate7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:layout_toLeftOf="@+id/iv_defect_yes7"
+                android:src="@drawable/moderate_selected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_no7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_moderate7"
+                android:src="@drawable/no_unselected"
+                android:tag="select" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/list_item_background"
+            android:layout_margin="@dimen/margin_1"
+            android:padding="@dimen/margin_14">
+
+            <TextView
+                android:id="@+id/tv_defectType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_no"
+                android:maxLines="3"
+                android:paddingRight="@dimen/margin_4"
+                android:text="Breaks"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp" />
+            <CheckBox
+                android:id="@+id/cb_checked"
+                android:visibility="invisible"
+                android:buttonTint="@color/blue_shade_one"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/iv_defect_no"/>
+
+            <ImageView
+                android:id="@+id/iv_defect_yes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:src="@drawable/yes_unselected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_moderate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/margin_12"
+                android:layout_toLeftOf="@+id/iv_defect_yes"
+                android:src="@drawable/moderate_selected"
+                android:tag="select" />
+
+            <ImageView
+                android:id="@+id/iv_defect_no"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/iv_defect_moderate"
+                android:src="@drawable/no_unselected"
+                android:tag="select" />
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

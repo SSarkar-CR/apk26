@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:paddingBottom="@dimen/footer_height"
+    android:overScrollMode="never"
+    android:fadingEdge="none"
+    android:background="@color/background_color_one">
+  <LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="@dimen/margin_16"
+    android:layout_marginBottom="@dimen/margin_1">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_12">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Report ID."
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp" />
+
+            <TextView
+                android:id="@+id/tv_report_id_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="@dimen/margin_12"
+        android:layout_marginStart="1dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date/Time."
+            android:textColor="@color/black_shade_two"
+            android:textSize="@dimen/text_size_12sp"/>
+        <TextView
+            android:id="@+id/tv_date_time_trailer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_12sp"/>
+    </LinearLayout>
+ </LinearLayout>
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginBottom="@dimen/margin_1"
+    android:weightSum="2">
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="@dimen/margin_12"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User."
+            android:textColor="@color/black_shade_two"
+            android:textSize="@dimen/text_size_12sp"/>
+        <TextView
+            android:id="@+id/tv_user_trailer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_12sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="@dimen/margin_12"
+        android:layout_marginStart="@dimen/margin_1"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Driver's Name."
+            android:textColor="@color/black_shade_two"
+            android:textSize="@dimen/text_size_12sp"/>
+        <TextView
+            android:id="@+id/tv_name_trailer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textColor="@color/black_shade_three"
+            android:textSize="@dimen/text_size_12sp"/>
+    </LinearLayout>
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/margin_1"
+        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="@dimen/margin_12"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vehicle_no"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp" />
+            <TextView
+                android:id="@+id/tv_vehicle_no_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="@dimen/margin_12"
+            android:layout_marginStart="@dimen/margin_1"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trailer/Fleet Serial No."
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp"/>
+            <TextView
+                android:id="@+id/tv_trailer_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/margin_1"
+        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="@dimen/margin_12"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manufacturer."
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp"/>
+            <TextView
+                android:id="@+id/tv_manufacturer_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_12sp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            android:padding="@dimen/margin_12"
+            android:layout_marginStart="@dimen/margin_1"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Model."
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp"/>
+            <TextView
+                android:id="@+id/tv_model_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_12sp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NFC Tags Scanned"
+        android:textSize="@dimen/extra_small_text_size"
+        android:textColor="@color/black_shade_three"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/margin_16"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_one"
+        android:orientation="horizontal"
+        android:layout_marginStart="@dimen/margin_12"
+        android:layout_marginEnd="@dimen/margin_12"
+        android:paddingTop="@dimen/margin_4"
+        android:paddingBottom="@dimen/margin_4"
+        android:layout_marginBottom="@dimen/margin_4">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/defects_details_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_12"
+            android:layout_marginEnd="@dimen/margin_12"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Near-Side(Rear) Tag"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp"/>
+            <TextView
+                android:id="@+id/tv_near_tag_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/defects_details_bg"
+            android:orientation="vertical"
+            android:padding="@dimen/margin_12"
+            android:gravity="center"
+            android:layout_weight="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Off-Side(Rear) Tag"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_12sp"/>
+            <TextView
+                android:id="@+id/tv_off_tag_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_14sp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:background="@drawable/nfc_background"
+          android:layout_marginStart="@dimen/margin_12"
+          android:layout_marginEnd="@dimen/margin_12"
+          android:layout_marginTop="@dimen/margin_16">
+
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:gravity="center_horizontal"
+              android:padding="@dimen/margin_12"
+              android:text="@string/driver_signature"
+              android:textColor="@color/black_shade_three" />
+          <View
+              android:layout_width="match_parent"
+              android:layout_height="1dp"
+              android:background="@color/grey_shade_one" />
+
+          <ImageView
+              android:id="@+id/iv_driver_sign_trailer"
+              android:layout_width="match_parent"
+              android:layout_margin="@dimen/margin_4"
+              android:layout_height="180dp" />
+      </LinearLayout>
+ </LinearLayout>
+</ScrollView>

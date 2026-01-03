@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".activities.LogInActivity"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:src="@drawable/login_icon" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:text="Log In"
+        android:textColor="@color/login_text"
+        android:textSize="@dimen/large_text_size"/>
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="16dp"
+        android:textColorHint="@color/edit_text_textColor"
+        android:background="@drawable/edit_text_focus"
+        android:padding="@dimen/input_field_padding"
+        android:textSize="@dimen/input_text_size"
+        android:maxLength="40"
+        android:textColor="@color/black_shade_three"
+        android:inputType="textEmailAddress"
+        android:importantForAutofill="no"
+        android:hint="Email" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:hintTextAppearance="@style/HintText"
+        android:textColorHint="@color/edit_text_textColor"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/black_shade_two">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="32dp"
+            android:maxLength="40"
+            android:background="@drawable/edit_text_focus"
+            android:padding="@dimen/input_field_padding"
+            android:textSize="@dimen/input_text_size"
+            android:textColor="@color/edit_text_textColor"
+            android:inputType="textPassword"
+            android:hint="Password" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/bt_logIn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/login_button_background"
+        android:text="Log In"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:padding="@dimen/input_field_padding"
+        android:textSize="@dimen/input_text_size" />
+
+    <TextView
+        android:id="@+id/tv_forgotPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Forgot password ?"
+        android:textColor="@color/black_shade_two"
+        android:textSize="@dimen/extra_small_text_size"
+        android:visibility="gone"/>
+
+</LinearLayout>

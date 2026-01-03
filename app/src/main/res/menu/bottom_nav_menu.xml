@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home"
+        android:checked="true"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/form"
+        android:icon="@drawable/form"
+        android:checked="true"
+        android:title="Form" />
+
+    <item
+        android:id="@+id/crate"
+        android:icon="@drawable/crate"
+        android:checked="true"
+        android:title="Crate" />
+
+    <item
+        android:id="@+id/notifications"
+        android:icon="@drawable/notification"
+        android:checked="true"
+        android:title="Notifications" />
+
+    <item
+        android:id="@+id/favourites"
+        android:icon="@drawable/favourite"
+        android:checked="true"
+        android:title="Favourites" />
+
+</menu>

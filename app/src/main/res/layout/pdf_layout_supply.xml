@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_pdf"
+    android:layout_width="800dp"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_one"
+    android:orientation="vertical">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="14dp"
+            android:paddingTop="25dp"
+            android:paddingRight="14dp"
+            android:paddingBottom="50dp">
+            <!--  header-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_header"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3.5"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Supply Ticket"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/medium_text_size"
+                    android:textStyle="bold" />
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_pdf_logo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:src="@drawable/mc_gee_logo"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+            <!--start inspection result-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/pdf_border">
+
+                <!--ticket no-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_ticket_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintBottom_toTopOf="@+id/cl_operator"
+                    app:layout_constraintEnd_toStartOf="@+id/cl_reference_code"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_ticket_no_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_marginTop="5dp"
+                        android:text="Ticket No.:"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_ticket_no_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_ticket_no_title" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--reference code-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_reference_code"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintBottom_toTopOf="@+id/cl_user_role"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cl_ticket_no"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_reference_code_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="5dp"
+                        android:text="Reference Code:"
+                        android:textColor="@color/black_shade_three"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_reference_code_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_reference_code_title" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <!--inspection ID-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_operator"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintEnd_toStartOf="@+id/cl_user_role"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_ticket_no">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_operator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_marginTop="5dp"
+                        android:text="Operator:"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_operator_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_operator" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--user-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_user_role"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cl_operator"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_reference_code">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_user_role"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_marginTop="5dp"
+                        android:text="User Role:"
+                        android:textColor="@color/black_shade_three"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_user_role_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_user_role" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!-- 3rd row-->
+                <!-- trailer / fleet serial number -->
+                <!-- driver's name-->
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_external_ticket_no"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/cl_driver_name"
+                    app:layout_constraintHorizontal_bias="0.4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_operator">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_external_ticket_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="@dimen/margin_10"
+                        android:text="@string/external_ticket_no"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_external_ticket_no_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_external_ticket_no" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cl_driver_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:layout_marginEnd="@dimen/margin_10"
+                    android:background="@drawable/edit_text_background"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cl_external_ticket_no"
+                    app:layout_constraintTop_toBottomOf="@+id/cl_user_role">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_driver_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_marginTop="5dp"
+                        android:text="@string/drivers_name"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_driver_name_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_driver_name" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--end of start inspection result constraint layout-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Material description-->
+            <LinearLayout
+                android:id="@+id/ll_material_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_background"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_material_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8"
+                    android:text="Description of Material"
+                    android:padding="@dimen/margin_8"
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold"
+                    android:background="@color/grey_shade_three"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_material_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:text="Material:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_material_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_gross_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:text="Gross:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_gross_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_tare_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:text="Tare:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_tare_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_net_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:text="Net:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_net_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_unit_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:text="Unit:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_unit_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Transfer Points-->
+            <LinearLayout
+                android:id="@+id/ll_transfer_points"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_background"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_transfer_points"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8"
+                    android:text="Transfer Points"
+                    android:padding="@dimen/margin_8"
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold"
+                    android:background="@color/grey_shade_three"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_collection_site_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:text="Collection Site:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_collection_site_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_delivery_site_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:text="Delivery Site:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_delivery_site_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Haulier-->
+            <LinearLayout
+                android:id="@+id/ll_haulier"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_background"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_haulier"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8"
+                    android:text="Haulier"
+                    android:padding="@dimen/margin_8"
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold"
+                    android:background="@color/grey_shade_three"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_haulier_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="@dimen/margin_2"
+                            android:text="Haulier:"
+                            android:textStyle="bold"
+                            android:textColor="@color/black_shade_three"
+                            android:textSize="@dimen/text_size_16sp" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_haulier_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="@dimen/margin_2"
+                            android:textColor="@color/black_shade_three"
+                            android:textSize="@dimen/text_size_16sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_date_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="@dimen/margin_2"
+                            android:text="@string/date_time"
+                            android:textStyle="bold"
+                            android:textColor="@color/black_shade_three"
+                            android:textSize="@dimen/text_size_16sp" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_date_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="@dimen/margin_2"
+                            android:textColor="@color/black_shade_three"
+                            android:textSize="@dimen/text_size_16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_haulier_no_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="@dimen/margin_2"
+                            android:text="Haulier No.:"
+                            android:textStyle="bold"
+                            android:textColor="@color/black_shade_three"
+                            android:textSize="@dimen/text_size_16sp" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_haulier_no_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="@dimen/margin_2"
+                            android:textColor="@color/black_shade_three"
+                            android:textSize="@dimen/text_size_16sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_waiting_time_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="@dimen/margin_2"
+                            android:text="Waiting Time(HH:MM):"
+                            android:textStyle="bold"
+                            android:textColor="@color/black_shade_three"
+                            android:textSize="@dimen/text_size_16sp" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/tv_waiting_time_value"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/margin_8"
+                            android:layout_marginTop="3dp"
+                            android:layout_marginBottom="5dp"
+                            android:padding="@dimen/margin_2"
+                            android:textColor="@color/black_shade_three"
+                            android:textSize="@dimen/text_size_16sp" />
+                    </LinearLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_vehicle_no_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:text="Vehicle No.:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_vehicle_no_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_vehicle_type_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:text="Vehicle Type:"
+                        android:textStyle="bold"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_vehicle_type_value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin_8"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="5dp"
+                        android:padding="@dimen/margin_2"
+                        android:textColor="@color/black_shade_three"
+                        android:textSize="@dimen/text_size_16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Photos-->
+            <LinearLayout
+                android:id="@+id/ll_photos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_background"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_photos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8"
+                    android:text="Photos"
+                    android:padding="@dimen/margin_8"
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold"
+                    android:background="@color/grey_shade_three"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginRight="@dimen/margin_12"
+                        android:padding="@dimen/margin_8"
+                        android:layout_marginBottom="@dimen/margin_4"
+                        android:background="@drawable/pdf_border">
+                        <ImageView
+                            android:id="@+id/iv_defect_one"
+                            android:layout_width="160dp"
+                            android:layout_height="220dp"
+                            android:padding="@dimen/margin_4"
+                            android:src="@drawable/date" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginRight="@dimen/margin_12"
+                        android:padding="@dimen/margin_8"
+                        android:layout_marginBottom="@dimen/margin_4"
+                        android:background="@drawable/pdf_border">
+                        <ImageView
+                            android:id="@+id/iv_defect_two"
+                            android:layout_width="160dp"
+                            android:layout_height="220dp"
+                            android:padding="@dimen/margin_4"
+                            android:src="@drawable/date" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <!-- Signatures-->
+            <LinearLayout
+                android:id="@+id/ll_signatures"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit_text_background"
+                android:orientation="vertical">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_signatures"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8"
+                    android:text="Signatures"
+                    android:padding="@dimen/margin_8"
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold"
+                    android:background="@color/grey_shade_three"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <!-- Haulier signature-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_margin="16dp">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_haulier_sign"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_weight="2"/>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Site Representative Signature \n(signed on behalf of Transferee):"
+                            android:textSize="@dimen/text_size_16sp"
+                            android:padding="@dimen/margin_1"
+                            android:textColor="@color/black"
+                            android:layout_marginRight="@dimen/margin_6"/>
+                    </LinearLayout>
+                    <!-- Driver signature-->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_margin="16dp">
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/iv_drivers_sign"
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_weight="2"/>
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Driver Signature \n(signed on behalf of Transferee):"
+                            android:textSize="@dimen/text_size_16sp"
+                            android:padding="@dimen/margin_1"
+                            android:textColor="@color/black"
+                            android:layout_marginRight="@dimen/margin_6"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginEnd="@dimen/margin_24"
+                android:gravity="center|end"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:gravity="center_vertical"
+                    android:text="Powered By Crate " />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pdf_footer_logo"
+                    android:layout_marginStart="@dimen/margin_4"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

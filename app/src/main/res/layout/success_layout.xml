@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/footer_height">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/success"
+        android:layout_margin="@dimen/margin_16"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Congratulations"
+        android:textColor="@color/black_shade_three"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="@dimen/margin_8"
+        android:textSize="@dimen/small_text_size"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/form_submitted"
+        android:textColor="@color/black_shade_two"
+        android:textSize="@dimen/extra_small_text_size"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"/>
+<!--    <TextView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="ID:  3819"-->
+<!--        android:textColor="@color/black_shade_two"-->
+<!--        android:textSize="@dimen/extra_small_text_size"-->
+<!--        android:layout_margin="@dimen/margin_16"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:gravity="center"/>-->
+
+</LinearLayout>

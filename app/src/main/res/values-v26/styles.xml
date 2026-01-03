@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:autofilledHighlight">@android:color/white</item>
+    </style>
+
+    <style name="Custom" parent="android:Theme.DeviceDefault.Dialog">
+        <item name="DialogTitleAppearance">@android:style/TextAppearance.Small</item>
+        <item name="DialogTitleText">" "</item>
+        <item name="DialogSpotColor">@color/blue_shade_one</item>
+        <item name="DialogSpotCount">8</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Switch" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">@color/blue_shade_one</item>
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/black_shade_two</item>
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">#42221f1f
+        </item>
+    </style>
+
+    <style name="SearchViewStyle" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorHint">@color/black_shade_two</item>
+        <!-- Gets rid of the search icon -->
+        <item name="searchIcon">@drawable/search</item>
+        <!-- Gets rid of the "underline" in the text -->
+        <item name="queryBackground">@color/black_shade_two</item>
+        <!-- Gets rid of the search icon when the SearchView is expanded -->
+        <item name="searchHintIcon">@null</item>
+        <!-- The hint text that appears when the user has not typed anything -->
+        <item name="queryHint">@string/begin_search</item>
+    </style>
+
+    <style name="spinnerTheme">
+        <item name="android:textColor">@color/black_shade_three</item>
+    </style>
+
+    <style name="HintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">0sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CounterText" parent="TextAppearance.Design.Counter">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/edit_text_textColor</item>
+    </style>
+
+    <style name="CounterOverFlow" parent="TextAppearance.Design.Counter.Overflow">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/edit_text_textColor</item>
+    </style>
+
+    <style name="ErrorText" parent="TextAppearance.Design.Error">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/edit_text_textColor</item>
+    </style>
+    <style name="progress_bar_style">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+    </style>
+</resources>

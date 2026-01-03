@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_12"
+    android:layout_marginRight="@dimen/margin_12"
+    android:layout_marginBottom="@dimen/margin_4"
+    android:background="@drawable/defected_vehicle_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_2"
+            android:background="@drawable/defected_vehicle_bg"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Status"
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_12sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/orange_circle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_10"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_4"
+                    android:text="ID No."
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:ems="6"
+                    android:paddingStart="@dimen/margin_2"
+                    android:singleLine="true"
+                    android:text="00001"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_8"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_4"
+                    android:text="Asset Name"
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_asset_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_weight="0.8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_4"
+                    android:text="NRI"
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_nri"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:ems="5"
+                    android:singleLine="true"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:layout_weight="0.8"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/margin_4"
+                    android:text="NTE"
+                    android:textColor="@color/black_shade_three"
+                    android:textSize="@dimen/text_size_14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_nte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_10"
+                    android:ems="5"
+                    android:singleLine="true"
+                    android:textColor="@color/black_shade_two"
+                    android:textSize="@dimen/text_size_12sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/view" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_2"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <LinearLayout
+                android:id="@+id/ll_issue_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:visibility="gone">
+                <Button
+                    android:id="@+id/bt_edit_key_dates"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_background_blue_curved"
+                    android:drawableLeft="@drawable/edit_key_dates"
+                    android:text="Edit Key Dates"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black_shade_three"
+                    android:drawablePadding="@dimen/margin_8"
+                    android:layout_margin="@dimen/margin_12"
+                    android:paddingStart="@dimen/margin_12"
+                    android:paddingEnd="@dimen/margin_12"
+                    android:textSize="@dimen/text_size_16sp"/>
+                <Button
+                    android:id="@+id/bt_manage_issues"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_background_blue_curved"
+                    android:drawableLeft="@drawable/manage_assets"
+                    android:text="Manage Issues"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textColor="@color/black_shade_three"
+                    android:layout_margin="@dimen/margin_12"
+                    android:drawablePadding="@dimen/margin_8"
+                    android:paddingStart="@dimen/margin_12"
+                    android:paddingEnd="@dimen/margin_12"
+                    android:textSize="@dimen/text_size_16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_inspection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="gone">
+                <Button
+                    android:id="@+id/bt_inspect_asset"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_background_blue_curved"
+                    android:drawableLeft="@drawable/inspect_asset"
+                    android:drawablePadding="@dimen/margin_8"
+                    android:text="Inspect Asset"
+                    android:textAllCaps="false"
+                    android:gravity="center"
+                    android:textColor="@color/black_shade_three"
+                    android:layout_margin="@dimen/margin_12"
+                    android:paddingStart="@dimen/margin_12"
+                    android:paddingEnd="@dimen/margin_12"
+                    android:textSize="@dimen/text_size_16sp" />
+                <Button
+                    android:id="@+id/bt_edit_key_dates_second"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/edit_text_background_blue_curved"
+                    android:drawableLeft="@drawable/edit_key_dates"
+                    android:text="Edit Key Dates"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black_shade_three"
+                    android:drawablePadding="@dimen/margin_8"
+                    android:layout_margin="@dimen/margin_12"
+                    android:paddingStart="@dimen/margin_12"
+                    android:paddingEnd="@dimen/margin_12"
+                    android:textSize="@dimen/text_size_16sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,1384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/id_for_print"
+    android:layout_width="570dp"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_one"
+    android:orientation="vertical"
+    android:padding="14dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="40dp"
+                android:background="@color/black_shade_seven" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:padding="@dimen/margin_2"
+                android:text="N-Virocycle Ltd"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/black_shade_seven" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_waste_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:padding="@dimen/margin_1"
+                android:text="@string/claire_form"
+                android:textColor="@color/black"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/black_shade_seven" />
+
+            <!-- ticket number-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="0.75"
+                        android:padding="2dp"
+                        android:text="Ticket No:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_ticket_no_value_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="W271120201500"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Company Name:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_company_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="McGee Group(Holdings Ltd.)"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_2"
+                android:background="@color/black_shade_seven" />
+
+            <!--operator-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:padding="2dp"
+                        android:text="Operator:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_operator_name_waste"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:padding="2dp"
+                        android:text="Christian Robinson"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+            <!--   &lt;!&ndash; External ticket number&ndash;&gt;-->
+            <!--    <LinearLayout-->
+            <!--        android:layout_width="match_parent"-->
+            <!--        android:layout_height="wrap_content"-->
+            <!--        android:orientation="horizontal"-->
+            <!--        android:visibility="gone">-->
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="0dp"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_weight="1"-->
+            <!--            android:orientation="horizontal"-->
+            <!--            android:layout_marginRight="@dimen/margin_4">-->
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:text="External Ticket No.:"-->
+            <!--                android:textSize="16dp"-->
+            <!--                android:textColor="@color/black_shade_seven"-->
+            <!--                android:padding="2dp"-->
+            <!--                android:layout_marginRight="@dimen/margin_6"-->
+            <!--                android:textStyle="bold"/>-->
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/tv_external_ticket_no"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:text=""-->
+            <!--                android:textSize="16dp"-->
+            <!--                android:textColor="@color/black_shade_seven"-->
+            <!--                android:padding="2dp"-->
+            <!--                android:layout_marginLeft="@dimen/margin_6"/>-->
+            <!--        </LinearLayout>-->
+            <!--        <LinearLayout-->
+            <!--            android:layout_width="0dp"-->
+            <!--            android:layout_height="wrap_content"-->
+            <!--            android:layout_weight="1"-->
+            <!--            android:orientation="horizontal"-->
+            <!--            android:layout_marginLeft="@dimen/margin_4">-->
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:text="Reference:"-->
+            <!--                android:textSize="16dp"-->
+            <!--                android:textColor="@color/black_shade_seven"-->
+            <!--                android:padding="2dp"-->
+            <!--                android:layout_marginRight="@dimen/margin_6"-->
+            <!--                android:textStyle="bold"/>-->
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/tv_reference_code_value_waste"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:text=""-->
+            <!--                android:textSize="16dp"-->
+            <!--                android:textColor="@color/black_shade_seven"-->
+            <!--                android:padding="2dp"-->
+            <!--                android:layout_marginLeft="@dimen/margin_6"/>-->
+            <!--        </LinearLayout>-->
+            <!--    </LinearLayout>-->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:padding="@dimen/margin_1"
+                android:text="PRODUCER(Transferor)"
+                android:textColor="@color/black_shade_seven"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_2"
+                android:background="@color/black_shade_seven" />
+
+            <!-- project-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Project:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_project_name"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Admiralty Arch:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="SIC Code:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_sic_code_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="43.2"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <!--location-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_2"
+                    android:text="Location:"
+                    android:textColor="@color/black_shade_seven"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_location_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_6"
+                    android:layout_weight="3"
+                    android:padding="@dimen/margin_2"
+                    android:text="The Mall, St James's , London SW1 2WH"
+                    android:textColor="@color/black_shade_seven"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:padding="@dimen/margin_1"
+                android:text="Description of Material"
+                android:textColor="@color/black_shade_seven"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_2"
+                android:background="@color/black_shade_seven" />
+
+            <!-- material-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_2"
+                    android:text="Material:"
+                    android:textColor="@color/black_shade_seven"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_material_name_waste"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_6"
+                    android:layout_weight="3"
+                    android:padding="@dimen/margin_2"
+                    android:text="Sand 17.05.04"
+                    android:textColor="@color/black_shade_seven"
+                    android:textSize="16dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+            <!--unit-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_1"
+                    android:text="Unit:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_unit"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_6"
+                    android:layout_weight="3"
+                    android:padding="@dimen/margin_1"
+                    android:text="1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black" />
+            <!--weight-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_1"
+                    android:text="Gross:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_gross"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_6"
+                    android:layout_weight="1.5"
+                    android:padding="@dimen/margin_1"
+                    android:text="0.0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_1"
+                    android:text="Tare:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_tare"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_6"
+                    android:layout_weight="1.5"
+                    android:padding="@dimen/margin_1"
+                    android:text="0.0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_1"
+                    android:text="Net:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_net"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_6"
+                    android:layout_weight="1.5"
+                    android:padding="@dimen/margin_1"
+                    android:text="0.0"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp" />
+            </LinearLayout>
+            <!--transfer points-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:padding="@dimen/margin_1"
+                android:text="Transfer Points"
+                android:textColor="@color/black_shade_seven"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_2"
+                android:background="@color/black_shade_seven" />
+
+            <!--collection and delivery-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Collection:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_collection_point_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Admiralty Arch"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Delivery:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_delivery_point_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Cappagh Stanwell 1111 Facility"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <!-- collection location and delivery location-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Collection Location:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_collection_location"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="The Mall, St James's , London SW1 2WH"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Delivery Location:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_delivery_location_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Stanwell Moor Road, Stanwell, Staines,Middle, TW196AB"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Site Location:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_site_location_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Site Reference:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_site_reference_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Collection Reference:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_collection_reference_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Delivery Reference:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_delivery_reference_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="On Site Time:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_on_site_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Off Site Time:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_off_site_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="External Ticket:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_external_ticket_no"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Permit No.:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_permit_no"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <!-- Haulier transfer-->
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:padding="@dimen/margin_1"
+                android:text="Haulier (Transferee)"
+                android:textColor="@color/black_shade_seven"
+                android:textSize="16dp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_2"
+                android:background="@color/black_shade_seven" />
+
+            <!-- haulier-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Haulier:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_haulier_name_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="McGee Group(Holdings Ltd.)"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Driver Name:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_driver_name_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Christian Robinson"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <!--date and time-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="@string/date_time"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_date_time_print_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="27-11-2020  16:06"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <!--vehicle number-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Vehicle No.:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_vehicle_no_print_waste"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="KN16CXM"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Waiting Time (HH:mm):"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_waiting_time_print"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="00:00"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <!--vehicle type-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Vehicle Type:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_vehicle_type"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="8W Tipper Loose"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text="Container Size:"
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_container_size"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_6"
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:text=""
+                        android:textColor="@color/black_shade_seven"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_1"
+                    android:text="Container Type:"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tv_container_type"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_6"
+                    android:layout_weight="3"
+                    android:padding="@dimen/margin_1"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_16sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <!-- producer signature-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_2"
+                    android:text="Producer Signature (signed on behalf of Transferor):"
+                    android:textColor="@color/black_shade_seven"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_producer_sign"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="10dp"
+                android:background="@color/black_shade_seven" />
+
+            <!-- Haulier signature-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:padding="@dimen/margin_2"
+                    android:text="Haulier Signature (signed on behalf of Transferee):"
+                    android:textColor="@color/black_shade_seven"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_haulier_sign_waste"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="2" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="10dp"
+                android:background="@color/black_shade_seven" />
+
+            <!--  recipient signature-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="@dimen/margin_2"
+                    android:text="Recipient Signature:"
+                    android:textColor="@color/black_shade_seven"
+                    android:textSize="16dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/iv_recipient_sign"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_shade_seven" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/sign_caution_one"
+                android:textColor="@color/black_shade_seven"
+                android:textSize="16dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_sign_caution_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/sign_caution_three"
+                android:textColor="@color/black_shade_seven"
+                android:textSize="16dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin_1"
+                android:layout_marginEnd="@dimen/margin_8"
+                android:text="Powered by Crate"
+                android:textColor="@color/black_shade_seven"
+                android:textSize="16dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_1"
+                android:layout_marginTop="@dimen/margin_1"
+                android:background="@color/black_shade_seven" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

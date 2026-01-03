@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/margin_12"
+    android:layout_marginRight="@dimen/margin_12"
+    android:padding="@dimen/margin_8"
+    android:layout_marginBottom="@dimen/margin_4"
+    android:background="@drawable/pdf_border">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_defects"
+            android:layout_width="160dp"
+            android:layout_height="220dp"
+            android:padding="@dimen/margin_4"
+            android:src="@drawable/date" />
+    </LinearLayout>
+
+</LinearLayout>

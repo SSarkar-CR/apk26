@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sv_ad_hoc_report"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_color_one"
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:fadingEdge="none">
+    <LinearLayout
+        android:id="@+id/ll_peeking_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_color_one"
+        android:paddingBottom="@dimen/header_height_dashboard"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/cl_header"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height_dashboard"
+            android:background="@color/white">
+
+            <TextView
+                android:id="@+id/tv_header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="34dp"
+                android:text="Defect Close Out"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/small_text_size"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Asset Variant Name :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:id="@+id/tv_asset_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Test data"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Asset Id :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:id="@+id/tv_asset_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="0001"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Asset Name :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:id="@+id/tv_asset_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Testing Drill"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Defect Description :"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_size_16sp"
+            android:background="@color/grey_shade_one"
+            android:textColor="@color/black_shade_two"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingBottom="@dimen/margin_12"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Inspection Id:"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:id="@+id/tv_inspection_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Raised By :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:id="@+id/tv_inspected_by"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Defect Date :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:paddingStart="@dimen/margin_16"
+            android:paddingEnd="@dimen/margin_16"
+            android:paddingTop="@dimen/margin_12"
+            android:paddingBottom="@dimen/margin_12"
+            android:layout_marginTop="@dimen/margin_2"
+            android:layout_marginBottom="@dimen/margin_2">
+            <TextView
+                android:layout_weight="1.5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Location :"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black_shade_two"
+                android:textSize="@dimen/text_size_16sp"/>
+
+            <TextView
+                android:id="@+id/tv_asset_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_safety_critical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Safety Critical Information"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_20sp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/margin_8"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_asset_regimes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_defected_element"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Defected Elements"
+                android:textColor="@color/black_shade_three"
+                android:textSize="@dimen/text_size_20sp"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:layout_margin="@dimen/margin_8"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_asset_elements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/bt_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_18"
+            android:background="@drawable/blue_button_background"
+            android:text="Save"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:padding="@dimen/input_field_padding"
+            android:textSize="@dimen/input_text_size" />
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginTop="@dimen/margin_24"
+            android:layout_marginBottom="@dimen/margin_18"
+            android:background="@drawable/blue_button_background"
+            android:text="Go Back"
+            android:textAllCaps="false"
+            android:textColor="@color/black_shade_three"
+            android:padding="@dimen/input_field_padding"
+            android:textSize="@dimen/input_text_size" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

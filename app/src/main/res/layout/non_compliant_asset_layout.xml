@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_shade_three"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/cl_header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height_dashboard"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_cross"
+            android:layout_width="@dimen/margin_20"
+            android:layout_height="@dimen/margin_20"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/margin_24"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/closed"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="34dp"
+            android:layout_toEndOf="@+id/iv_cross"
+            android:gravity="center"
+            android:text="Failed inspection or overdue"
+            android:textColor="@color/black_shade_two"
+            android:textSize="@dimen/small_text_size"
+            android:textStyle="bold" />
+        <!--            android:text="Assets Requiring Attention"-->
+    </RelativeLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_inspection_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_6"
+        android:descendantFocusability="beforeDescendants"
+        android:focusable="true"
+        android:focusableInTouchMode="true" />
+</androidx.appcompat.widget.LinearLayoutCompat>

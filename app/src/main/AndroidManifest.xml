@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.NFC" />
+     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="false" />
+     <uses-feature
+     android:name="android.hardware.camera"
+     android:required="true" />
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
+
+    <application
+        android:name=".utility.FirebaseHandler"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/app_logo"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/app_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name=".activities.ViewCertificates"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AssetInspection"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ManageAsset"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AssetHistory"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.IssueManagement"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.ViewAssetHistory"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AssetDateManagement"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.EditSafetyIndicators"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.DateReValidation"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.IdReferenceChange"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.MyTask"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.OffHireRequest"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DefectCloseOut"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CloseElementDefects"
+            android:exported="false" />
+        <activity
+            android:name=".activities.CloseRegimeDefects"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AssetCertificates"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.NonCompliantAssets"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.CompliantAssets"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AllAssets"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.InspectionDue"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.InspectionList"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AssetManagementDashboard"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AssetAssignSiteActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.CreateAssetForm"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AssetDetails"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activities.AssetForms"
+            android:exported="false"
+            android:screenOrientation="fullSensor" />
+        <activity
+            android:name=".activities.JobDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.LogInActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:windowSoftInputMode="adjustResize|adjustPan">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.NfcTagManager"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.AdHocReportActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.WasteTransferFormOperator"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.WasteTransferFormDriver"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.SupplyFormDriver"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.SupplyFormOperator"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.DieselDeliveryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.ServicesDriverNoteActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.StartTasksActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.ArrivedCollectionPoint"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.LeftCollectionPoint"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.ArrivedDeliveryPoint"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.FinishTaskActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.EndOfDayActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.AssignSiteActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".zebraPrintingTools.DeviceListActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.DeviceDefault.Dialog" />
+        <activity
+            android:name=".activities.SupplyFormOperatorEdit"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.WasteTransferFormOperatorEdit"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.AwaitingDeliveryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.WasteTransferDelivery"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.WasteTransferDeliveryEdit"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".activities.WasteTransferFormDeliveryDriver"
+            android:screenOrientation="portrait" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.crate.crateam.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

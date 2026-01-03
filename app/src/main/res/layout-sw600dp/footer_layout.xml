@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/margin_12"
+    android:background="@drawable/footer_background">
+
+    <ImageView
+        android:id="@+id/iv_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_8"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_weight="1"
+        android:src="@drawable/home_select"/>
+
+    <ImageView
+        android:id="@+id/iv_form"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_8"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_weight="1"
+        android:src="@drawable/form" />
+
+    <ImageView
+        android:id="@+id/iv_crate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginStart="@dimen/margin_4"
+        android:src="@drawable/crate"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="@dimen/margin_8"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_gravity="center">
+
+    <ImageView
+        android:id="@+id/iv_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/notification"/>
+
+        <TextView
+            android:id="@+id/tv_notification_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/iv_notification"
+            android:layout_marginStart="@dimen/margin_8"
+            android:layout_marginEnd="-8dp"
+            android:layout_marginBottom="@dimen/margin_24"
+            android:background="@drawable/red_pen"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="@dimen/extra_small_text_size" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_favourites"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_8"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_weight="1"
+        android:src="@drawable/favourite" />
+
+</LinearLayout>

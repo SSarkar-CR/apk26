@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.crate.crateam.utility.SwipeRevealLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_height_other"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/background_color_one">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|end"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:background="@color/background_color_one"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/bt_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/background_color_one"
+                app:srcCompat="@drawable/view"
+                android:text="View"/>
+            <ImageButton
+                android:id="@+id/bt_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/background_color_one"
+                app:srcCompat="@drawable/edit"
+                android:text="View"
+                android:visibility="gone"/>
+        </LinearLayout>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="@color/background_color_one">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_color_one">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:background="@drawable/defected_vehicle_bg">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/defected_vehicle"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    android:layout_marginStart="@dimen/margin_4"
+                    android:layout_weight="0.5"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/vehicle_reg"
+                        android:textColor="@color/black_shade_three"
+                        android:paddingBottom="@dimen/margin_4"
+                        android:textSize="@dimen/text_size_14sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tv_vehicle_reg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LD64 YXX"
+                        android:singleLine="true"
+                        android:paddingStart="@dimen/margin_2"
+                        android:ems="6"
+                        android:textColor="@color/black_shade_two"
+                        android:textSize="@dimen/text_size_12sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_8"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/driver"
+                        android:textColor="@color/black_shade_three"
+                        android:paddingBottom="@dimen/margin_4"
+                        android:textSize="@dimen/text_size_14sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tv_driver_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Driver Name"
+                        android:singleLine="true"
+                        android:ems="8"
+                        android:textColor="@color/black_shade_two"
+                        android:textSize="@dimen/text_size_12sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_8"
+                    android:layout_weight="1.5"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/date_raised"
+                        android:textColor="@color/black_shade_three"
+                        android:paddingBottom="@dimen/margin_4"
+                        android:textSize="@dimen/text_size_14sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="28/08/2019"
+                        android:singleLine="true"
+                        android:ems="5"
+                        android:textColor="@color/black_shade_two"
+                        android:textSize="@dimen/text_size_12sp"/>
+
+                </LinearLayout>
+               </LinearLayout>
+            </FrameLayout>
+        </androidx.cardview.widget.CardView>
+    </FrameLayout>
+</com.crate.crateam.utility.SwipeRevealLayout>
