@@ -3,7 +3,7 @@ import markdown
 from weasyprint import HTML, CSS
 
 # Read markdown file
-with open('/home/user/apk26/CODE_REVIEW_REPORT.md', 'r') as f:
+with open('/home/user/apk26/DETAILED_CODE_REVIEW.md', 'r') as f:
     md_content = f.read()
 
 # Convert to HTML
@@ -135,6 +135,6 @@ styled_html = f'''
 '''
 
 # Generate PDF
-HTML(string=styled_html).write_pdf('/home/user/apk26/CODE_REVIEW_REPORT.pdf')
+HTML(string=styled_html).write_pdf('/home/user/apk26/DETAILED_CODE_REVIEW.pdf')
 
-print("PDF generated successfully: /home/user/apk26/CODE_REVIEW_REPORT.pdf")
+print("PDF generated successfully: /home/user/apk26/DETAILED_CODE_REVIEW.pdf")
