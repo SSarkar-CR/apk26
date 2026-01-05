@@ -104,6 +104,7 @@ import java.util.List;
 import java.util.Locale;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.android.gms.tasks.Tasks;
+import com.crate.crateam.model.ElementDefectModel;
 
 public class CloseElementDefects extends AppCompatActivity implements View.OnClickListener {
     private FirebaseFirestore db = FirestoreManager.getInstance();
@@ -126,13 +127,10 @@ public class CloseElementDefects extends AppCompatActivity implements View.OnCli
             tv_clear_sign,tv_value,tv_element_name, tv_element_defect;
     private boolean hasImage = false,hasImageTwo = false,isSigned = false,validation_done = false;
     private Bitmap getDrawable1, getDrawable2;
-    private ArrayList<String> all_defected_inspection_ids = new ArrayList<>(20);
-    private ArrayList<String> arraylist_defected_element_value = new ArrayList<>(20);
-    private ArrayList<String> assetElementsNameList = new ArrayList<>(50);
-    private ArrayList<Integer> assetElementsIdList = new ArrayList<>(50);
-    private ArrayList<String> assetDefectedElementsNameList = new ArrayList<>(20);
-    private ArrayList<Integer> assetDefectedElementsIdList = new ArrayList<>(20);
-    private ArrayList<String> assetDefectedElementsCommentList = new ArrayList<>(20);
+    // OPTIMIZED: Using ElementDefectModel instead of parallel ArrayLists
+    private List<ElementDefectModel> defectedElementsList = new ArrayList<>(20);
+    private List<ElementDefectModel> assetElementsList = new ArrayList<>(50);
+    private List<ElementDefectModel> currentDefectedElementsList = new ArrayList<>(20);
     private PopupWindow popupWindow;
     private static final int REQUEST_CAMERA= 0;
     private Uri imageUri;
@@ -543,58 +541,52 @@ public class CloseElementDefects extends AppCompatActivity implements View.OnCli
         });
     }
 
-    private void getAssetElements(int asset_type_id){
-        Source source;
-        if (!AppData.internetOnline(this))
-            source = Source.CACHE;
-        else source = Source.SERVER;
-        Query query = assetTypeElementReference.whereEqualTo("status", "Active").whereEqualTo("asset_type_id",asset_type_id);
-        query.get(source).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    assetElementsNameList.clear();
-                    assetElementsIdList.clear();
-                    for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
-                        assetElementsNameList.add(queryDocumentSnapshot.getString("element_name"));
-                        assetElementsIdList.add(Objects.requireNonNull(queryDocumentSnapshot.getLong("id")).intValue());
-                    }
+    /**
+     * OPTIMIZED: Uses ElementDefectModel instead of parallel ArrayLists
+     */
+    private void getAssetElements(int asset_type_id) {
+        Source source = !AppData.internetOnline(this) ? Source.CACHE : Source.SERVER;
+        Query query = assetTypeElementReference.whereEqualTo("status", "Active")
+                .whereEqualTo("asset_type_id", asset_type_id);
+
+        query.get(source).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                assetElementsList.clear();
+                for (QueryDocumentSnapshot doc : task.getResult()) {
+                    ElementDefectModel model = new ElementDefectModel(
+                            Objects.requireNonNull(doc.getLong("id")).intValue(),
+                            doc.getString("element_name"),
+                            ""
+                    );
+                    assetElementsList.add(model);
                 }
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CloseElementDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        }).addOnFailureListener(e ->
+                Toast.makeText(CloseElementDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
-    private void getDefectedElements(String inspection_id){
-        Source source;
-        if (!AppData.internetOnline(this))
-            source = Source.CACHE;
-        else source = Source.SERVER;
-        Query query = assetInspectionDefectsReference.whereEqualTo("status", "Active").whereEqualTo("inspection_id",inspection_id);
-        query.get(source).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    assetDefectedElementsNameList.clear();
-                    assetDefectedElementsIdList.clear();
-                    assetDefectedElementsCommentList.clear();
-                    for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
-                        assetDefectedElementsNameList.add(queryDocumentSnapshot.getString("element_name"));
-                        assetDefectedElementsIdList.add(Objects.requireNonNull(queryDocumentSnapshot.getLong("element_id")).intValue());
-                        assetDefectedElementsCommentList.add(queryDocumentSnapshot.getString("element_defect"));
-                    }
+    /**
+     * OPTIMIZED: Uses ElementDefectModel instead of parallel ArrayLists
+     */
+    private void getDefectedElements(String inspection_id) {
+        Source source = !AppData.internetOnline(this) ? Source.CACHE : Source.SERVER;
+        Query query = assetInspectionDefectsReference.whereEqualTo("status", "Active")
+                .whereEqualTo("inspection_id", inspection_id);
+
+        query.get(source).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                currentDefectedElementsList.clear();
+                for (QueryDocumentSnapshot doc : task.getResult()) {
+                    ElementDefectModel model = new ElementDefectModel(
+                            Objects.requireNonNull(doc.getLong("element_id")).intValue(),
+                            doc.getString("element_name"),
+                            doc.getString("element_defect")
+                    );
+                    currentDefectedElementsList.add(model);
                 }
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CloseElementDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        }).addOnFailureListener(e ->
+                Toast.makeText(CloseElementDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void setSignInspector() {
@@ -615,85 +607,82 @@ public class CloseElementDefects extends AppCompatActivity implements View.OnCli
         });
     }
 
-    private void sendAllElementsDefects(){
-        Source source;
-        if (!AppData.internetOnline(this))
-            source = Source.CACHE;
-        else source = Source.SERVER;
+    /**
+     * OPTIMIZED: Uses ElementDefectModel instead of parallel ArrayLists
+     */
+    private void sendAllElementsDefects() {
+        Source source = !AppData.internetOnline(this) ? Source.CACHE : Source.SERVER;
         Bitmap signatureBitmap = signature_pad_inspector.getSignatureBitmap();
         inspector_sign = AppData.convertTOBase64Image(signatureBitmap);
-        for (int i=0; i< all_defected_inspection_ids.size(); i++) {
+
+        for (ElementDefectModel defectModel : defectedElementsList) {
             final Map<String, Object> elementsDefect = new HashMap<>();
-            final String inspectionIds = all_defected_inspection_ids.get(i);
+            final String inspectionIds = defectModel.getInspectionId();
+
             elementsDefect.put("user_id", user_id);
             elementsDefect.put("asset_id", assetId);
             elementsDefect.put("asset_type_id", assetTypeId);
             elementsDefect.put("regime", regimeId);
             elementsDefect.put("element_id", element_id);
-            elementsDefect.put("inspection_id", all_defected_inspection_ids.get(i));
+            elementsDefect.put("inspection_id", defectModel.getInspectionId());
             elementsDefect.put("assign_location", siteLocationId);
             elementsDefect.put("element_name", element_name);
-            elementsDefect.put("element_defect", arraylist_defected_element_value.get(i));
+            elementsDefect.put("element_defect", defectModel.getElementDefect());
             elementsDefect.put("defect_comment", et_comment.getText().toString());
             elementsDefect.put("conducted_on", current_date);
             elementsDefect.put("user_role", "WM");
             elementsDefect.put("defected", "No");
             elementsDefect.put("submission_time", current_time);
-            elementsDefect.put("id", all_defected_inspection_ids.get(i) + "_" + element_id + "_" + "WM");
+            elementsDefect.put("id", defectModel.getInspectionId() + "_" + element_id + "_" + "WM");
             elementsDefect.put("status", "Active");
             elementsDefect.put("z_image_one", image1);
             elementsDefect.put("z_image_two", image2);
             elementsDefect.put("wm_sign", inspector_sign);
             elementsDefect.put("device_id", device_id);
             elementsDefect.put("time_second_format", AppData.getTimeSecond());
+
             Query query = assetInspectionDefectsReference.whereEqualTo("inspection_id", inspection_id);
-            query.get(source).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    if (task.isSuccessful()) {
-//                        progressDialog.dismiss();
-                        dataUploaded = "Yes";
-                        Log.d("TFYT :" ,"I am 11");
-                        assetInspectionDefectsReference.document(inspectionIds + "_" + element_id + "_" + "WM").set(elementsDefect);
-                        if (dataUploaded.equals("Yes"))
-                            toConfirmation("Element defect closed successfully.");
-                    }
+            query.get(source).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    dataUploaded = "Yes";
+                    Log.d("TFYT :", "I am 11");
+                    assetInspectionDefectsReference.document(inspectionIds + "_" + element_id + "_" + "WM").set(elementsDefect);
+                    if (dataUploaded.equals("Yes"))
+                        toConfirmation("Element defect closed successfully.");
                 }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.d("RDYT Fail:" , "1");
-                    progressDialog.dismiss();
-                    Toast.makeText(CloseElementDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
+            }).addOnFailureListener(e -> {
+                Log.d("RDYT Fail:", "1");
+                progressDialog.dismiss();
+                Toast.makeText(CloseElementDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             });
         }
     }
 
-    private void fetchAllInspectionElementDefects(int asset_id,int element_id){
-        Source source;
-        if (!AppData.internetOnline(this))
-            source = Source.CACHE;
-        else source = Source.SERVER;
-        Query query = assetInspectionDefectsReference.whereEqualTo("asset_id",asset_id).whereEqualTo("element_id", element_id)
-                .whereEqualTo("defected","Yes");
-        query.get(source).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
-                        all_defected_inspection_ids.add(queryDocumentSnapshot.getString("inspection_id"));
-                        arraylist_defected_element_value.add(queryDocumentSnapshot.getString("element_defect"));
-                    }
-                    Log.d("RTTTYYT:" ,all_defected_inspection_ids + " " + arraylist_defected_element_value);
+    /**
+     * OPTIMIZED: Uses ElementDefectModel instead of parallel ArrayLists
+     */
+    private void fetchAllInspectionElementDefects(int asset_id, int element_id) {
+        Source source = !AppData.internetOnline(this) ? Source.CACHE : Source.SERVER;
+        Query query = assetInspectionDefectsReference.whereEqualTo("asset_id", asset_id)
+                .whereEqualTo("element_id", element_id)
+                .whereEqualTo("defected", "Yes");
+
+        query.get(source).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                defectedElementsList.clear();
+                for (QueryDocumentSnapshot doc : task.getResult()) {
+                    ElementDefectModel model = new ElementDefectModel.Builder()
+                            .setInspectionId(doc.getString("inspection_id"))
+                            .setElementDefect(doc.getString("element_defect"))
+                            .setElementId(element_id)
+                            .setAssetId(asset_id)
+                            .build();
+                    defectedElementsList.add(model);
                 }
+                Log.d("RTTTYYT:", defectedElementsList.toString());
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CloseElementDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        }).addOnFailureListener(e ->
+                Toast.makeText(CloseElementDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void updateAllElementDefects(int asset_id,int element_id){
@@ -758,52 +747,51 @@ public class CloseElementDefects extends AppCompatActivity implements View.OnCli
         });
     }
 
-    private void sendAssetInspectionSubmissionWMData(){
-        for (int i=0; i< all_defected_inspection_ids.size(); i++) {
-            final String inspectionIds = all_defected_inspection_ids.get(i);
-            final Map<String,Object> AssetInspection = new HashMap<>();
-            AssetInspection.put("user_id",user_id);
-            AssetInspection.put("user_name",current_user_name);
-            AssetInspection.put("asset_id",assetId);
-            AssetInspection.put("asset_type_id",assetTypeId);
-            AssetInspection.put("regime",regimeId);
-            AssetInspection.put("asset_number",asset_number);
-            AssetInspection.put("asset_name",asset_name);
+    /**
+     * OPTIMIZED: Uses ElementDefectModel instead of parallel ArrayLists
+     */
+    private void sendAssetInspectionSubmissionWMData() {
+        for (ElementDefectModel defectModel : defectedElementsList) {
+            final String inspectionIds = defectModel.getInspectionId();
+            final Map<String, Object> AssetInspection = new HashMap<>();
+
+            AssetInspection.put("user_id", user_id);
+            AssetInspection.put("user_name", current_user_name);
+            AssetInspection.put("asset_id", assetId);
+            AssetInspection.put("asset_type_id", assetTypeId);
+            AssetInspection.put("regime", regimeId);
+            AssetInspection.put("asset_number", asset_number);
+            AssetInspection.put("asset_name", asset_name);
             AssetInspection.put("assign_location", siteLocationId);
-            AssetInspection.put("inspection_id",all_defected_inspection_ids.get(i));
-            AssetInspection.put("user_role","WM");
-            AssetInspection.put("conducted_on",current_date);
-            AssetInspection.put("submission_time",current_time);
-            AssetInspection.put("id",all_defected_inspection_ids.get(i)+"_WM");
-            AssetInspection.put("z_image_one","");
-            AssetInspection.put("z_image_two","");
-            AssetInspection.put("defected","Yes");
-            AssetInspection.put("defect_inspection","Yes");
-            AssetInspection.put("asset_status","Defected not safe to use.");
-            AssetInspection.put("inspector_name","");
-            AssetInspection.put("z_inspector_sign","");
-            AssetInspection.put("status","Active");
-            AssetInspection.put("latitude",latitude);
-            AssetInspection.put("longitude",longitude);
-            AssetInspection.put("address",address);
+            AssetInspection.put("inspection_id", defectModel.getInspectionId());
+            AssetInspection.put("user_role", "WM");
+            AssetInspection.put("conducted_on", current_date);
+            AssetInspection.put("submission_time", current_time);
+            AssetInspection.put("id", defectModel.getInspectionId() + "_WM");
+            AssetInspection.put("z_image_one", "");
+            AssetInspection.put("z_image_two", "");
+            AssetInspection.put("defected", "Yes");
+            AssetInspection.put("defect_inspection", "Yes");
+            AssetInspection.put("asset_status", "Defected not safe to use.");
+            AssetInspection.put("inspector_name", "");
+            AssetInspection.put("z_inspector_sign", "");
+            AssetInspection.put("status", "Active");
+            AssetInspection.put("latitude", latitude);
+            AssetInspection.put("longitude", longitude);
+            AssetInspection.put("address", address);
             AssetInspection.put("wm_sign", "");
             AssetInspection.put("time_second_format", AppData.getTimeSecond());
-            AssetInspection.put("device_id",device_id);
-            AssetInspection.put("assign_user_status","Yes");
-            AssetInspection.put("site_type",site_type);
-                assetInspectionSubmissionReference.document(inspectionIds + "_WM").set(AssetInspection).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d("Response", "Form submitted successfully.");
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
+            AssetInspection.put("device_id", device_id);
+            AssetInspection.put("assign_user_status", "Yes");
+            AssetInspection.put("site_type", site_type);
+
+            assetInspectionSubmissionReference.document(inspectionIds + "_WM").set(AssetInspection)
+                    .addOnSuccessListener(aVoid -> Log.d("Response", "Form submitted successfully."))
+                    .addOnFailureListener(e -> {
                         progressDialog.dismiss();
                         Toast.makeText(CloseElementDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
+                    });
+        }
     }
 
     private boolean checkValidation() {
@@ -1013,13 +1001,9 @@ public class CloseElementDefects extends AppCompatActivity implements View.OnCli
      * Clear all ArrayLists to free memory
      */
     private void clearAllLists() {
-        if (all_defected_inspection_ids != null) all_defected_inspection_ids.clear();
-        if (arraylist_defected_element_value != null) arraylist_defected_element_value.clear();
-        if (assetElementsNameList != null) assetElementsNameList.clear();
-        if (assetElementsIdList != null) assetElementsIdList.clear();
-        if (assetDefectedElementsNameList != null) assetDefectedElementsNameList.clear();
-        if (assetDefectedElementsIdList != null) assetDefectedElementsIdList.clear();
-        if (assetDefectedElementsCommentList != null) assetDefectedElementsCommentList.clear();
+        if (defectedElementsList != null) defectedElementsList.clear();
+        if (assetElementsList != null) assetElementsList.clear();
+        if (currentDefectedElementsList != null) currentDefectedElementsList.clear();
     }
     /**
      * Safely dismiss all dialogs

@@ -39,6 +39,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -111,10 +112,10 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
         bt_logIn.setOnClickListener(this);
     }
 
-    @SuppressLint("MissingSuperCall")
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == MY_PERMISSIONS_REQUEST_READ_PHONE_STATE) {
             if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                 doPermissionGrantedStuffs();
@@ -122,6 +123,7 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                 Log.e(TAG,"Permission not granted.");
         }
     }
+
 
     @SuppressLint("HardwareIds")
     public void doPermissionGrantedStuffs() {
@@ -231,8 +233,13 @@ public class LogInActivity extends AppCompatActivity implements View.OnClickList
                             public void onComplete(@NonNull Task task) {
                                 if (task.isSuccessful()) {
                                     progressDialog.dismiss();
-                                    Log.d("EMAIL :" , firebaseAuth.getCurrentUser().getEmail());
-                                    loadUserDetails(firebaseAuth.getCurrentUser().getEmail());
+                                    FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+                                    if (currentUser != null && currentUser.getEmail() !=
+                                            null) { Log.d("EMAIL:", currentUser.getEmail());
+                                        loadUserDetails(currentUser.getEmail()); }
+                                    else {
+                                        alertDialog("Authentication failed , no user email found.");
+                                    }
                                 } else {
                                     progressDialog.dismiss();
                                     alertDialog(task.getException().getMessage());

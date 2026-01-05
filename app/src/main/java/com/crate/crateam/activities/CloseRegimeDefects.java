@@ -90,6 +90,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import com.google.firebase.firestore.ListenerRegistration;
 import com.google.android.gms.tasks.Tasks;
+import com.crate.crateam.model.RegimeDefectModel;
 
 public class CloseRegimeDefects extends AppCompatActivity implements View.OnClickListener {
     private FirebaseFirestore db = FirestoreManager.getInstance();
@@ -115,8 +116,8 @@ public class CloseRegimeDefects extends AppCompatActivity implements View.OnClic
     private boolean hasImage = false,hasImageTwo = false,isSigned = false,validation_done = false;
     private Bitmap getDrawable1, getDrawable2;
     private ArrayList<Integer> regimeElementsIds = new ArrayList<>(20);
-    private ArrayList<String> all_defected_inspection_ids = new ArrayList<>(20);
-    private ArrayList<String> arraylist_defected_regime_value = new ArrayList<>(20);
+    // OPTIMIZED: Using RegimeDefectModel instead of parallel ArrayLists
+    private List<RegimeDefectModel> defectedRegimesList = new ArrayList<>(20);
     private PopupWindow popupWindow;
     private static final int REQUEST_CAMERA= 0;
     private Uri imageUri;
@@ -613,26 +614,28 @@ public class CloseRegimeDefects extends AppCompatActivity implements View.OnClic
         return max;
     }
 
-    private void sendAllRegimeDefects(){
-        Source source;
-        if (!AppData.internetOnline(this))
-            source = Source.CACHE;
-        else source = Source.SERVER;
-        Log.d("TYTU :" ,regime_value_new);
+    /**
+     * OPTIMIZED: Uses RegimeDefectModel instead of parallel ArrayLists
+     */
+    private void sendAllRegimeDefects() {
+        Source source = !AppData.internetOnline(this) ? Source.CACHE : Source.SERVER;
+        Log.d("TYTU :", regime_value_new);
         Bitmap signatureBitmap = signature_pad_inspector.getSignatureBitmap();
         inspector_sign = AppData.convertTOBase64Image(signatureBitmap);
-        for (int i=0; i< all_defected_inspection_ids.size(); i++) {
+
+        for (RegimeDefectModel defectModel : defectedRegimesList) {
             final Map<String, Object> regimeDefect = new HashMap<>();
-            final String inspectionIds = all_defected_inspection_ids.get(i);
+            final String inspectionIds = defectModel.getInspectionId();
+
             regimeDefect.put("user_id", user_id);
             regimeDefect.put("asset_id", assetId);
             regimeDefect.put("asset_type_id", assetTypeId);
             regimeDefect.put("regime", regimeId);
             regimeDefect.put("regime_id", regime_id);
-            regimeDefect.put("inspection_id", all_defected_inspection_ids.get(i));
+            regimeDefect.put("inspection_id", defectModel.getInspectionId());
             regimeDefect.put("assign_location", siteLocationId);
             regimeDefect.put("regime_name", regime_name);
-            regimeDefect.put("regime_value", arraylist_defected_regime_value.get(i));
+            regimeDefect.put("regime_value", defectModel.getRegimeValue());
             regimeDefect.put("wm_comment", et_comment.getText().toString());
             regimeDefect.put("regime_value_wm", regime_value_new);
             regimeDefect.put("regime_view", regime_view);
@@ -640,31 +643,25 @@ public class CloseRegimeDefects extends AppCompatActivity implements View.OnClic
             regimeDefect.put("user_role", "WM");
             regimeDefect.put("defected", "No");
             regimeDefect.put("submission_time", current_time);
-            regimeDefect.put("id", all_defected_inspection_ids.get(i) + "_" + regime_id + "_" + "WM");
+            regimeDefect.put("id", defectModel.getInspectionId() + "_" + regime_id + "_" + "WM");
             regimeDefect.put("status", "Active");
             regimeDefect.put("z_image_one", image1);
             regimeDefect.put("z_image_two", image2);
             regimeDefect.put("wm_sign", inspector_sign);
             regimeDefect.put("device_id", device_id);
             regimeDefect.put("time_second_format", AppData.getTimeSecond());
+
             Query query = assetInspectionRegimeReference.whereEqualTo("inspection_id", inspection_id);
-            query.get(source).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                @Override
-                public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                    if (task.isSuccessful()) {
-//                        progressDialog.dismiss();
-                        Log.d("RDYT :" ,"4");
-                        assetInspectionRegimeReference.document(inspectionIds + "_" + regime_id + "_" + "WM").set(regimeDefect);
-                        toConfirmation("Safety Indicator revalidate successfully.");
-                    }
+            query.get(source).addOnCompleteListener(task -> {
+                if (task.isSuccessful()) {
+                    Log.d("RDYT :", "4");
+                    assetInspectionRegimeReference.document(inspectionIds + "_" + regime_id + "_" + "WM").set(regimeDefect);
+                    toConfirmation("Safety Indicator revalidate successfully.");
                 }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    progressDialog.dismiss();
-                    Log.d("RDYT Fail:" ,"4");
-                    Toast.makeText(CloseRegimeDefects.this, "4" + e.getMessage(), Toast.LENGTH_SHORT).show();
-                }
+            }).addOnFailureListener(e -> {
+                progressDialog.dismiss();
+                Log.d("RDYT Fail:", "4");
+                Toast.makeText(CloseRegimeDefects.this, "4" + e.getMessage(), Toast.LENGTH_SHORT).show();
             });
         }
     }
@@ -703,30 +700,31 @@ public class CloseRegimeDefects extends AppCompatActivity implements View.OnClic
         }
     }
 
-    private void fetchAllInspectionRegimeDefects(int asset_id,int regime_id){
-        Source source;
-        if (!AppData.internetOnline(this))
-            source = Source.CACHE;
-        else source = Source.SERVER;
-        Query query = assetInspectionRegimeReference.whereEqualTo("asset_id",asset_id).whereEqualTo("regime_id", regime_id)
-                .whereEqualTo("defected","Yes");
-        query.get(source).addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                if (task.isSuccessful()) {
-                    for (QueryDocumentSnapshot queryDocumentSnapshot : task.getResult()) {
-                        all_defected_inspection_ids.add(queryDocumentSnapshot.getString("inspection_id"));
-                        arraylist_defected_regime_value.add(queryDocumentSnapshot.getString("regime_value"));
-                    }
-                    Log.d("RTTTYYT:" , all_defected_inspection_ids + " " + arraylist_defected_regime_value);
+    /**
+     * OPTIMIZED: Uses RegimeDefectModel instead of parallel ArrayLists
+     */
+    private void fetchAllInspectionRegimeDefects(int asset_id, int regime_id) {
+        Source source = !AppData.internetOnline(this) ? Source.CACHE : Source.SERVER;
+        Query query = assetInspectionRegimeReference.whereEqualTo("asset_id", asset_id)
+                .whereEqualTo("regime_id", regime_id)
+                .whereEqualTo("defected", "Yes");
+
+        query.get(source).addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                defectedRegimesList.clear();
+                for (QueryDocumentSnapshot doc : task.getResult()) {
+                    RegimeDefectModel model = new RegimeDefectModel.Builder()
+                            .setInspectionId(doc.getString("inspection_id"))
+                            .setRegimeValue(doc.getString("regime_value"))
+                            .setRegimeId(regime_id)
+                            .setAssetId(asset_id)
+                            .build();
+                    defectedRegimesList.add(model);
                 }
+                Log.d("RTTTYYT:", defectedRegimesList.toString());
             }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(CloseRegimeDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        }).addOnFailureListener(e ->
+                Toast.makeText(CloseRegimeDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void updateAllRegimeDefects(int asset_id,int regime_id){
@@ -833,52 +831,51 @@ public class CloseRegimeDefects extends AppCompatActivity implements View.OnClic
         });
     }
 
-    private void sendAssetInspectionSubmissionWMData(){
-        for (int i=0; i< all_defected_inspection_ids.size(); i++) {
-            final String inspectionIds = all_defected_inspection_ids.get(i);
-            final Map<String,Object> AssetInspection = new HashMap<>();
-            AssetInspection.put("user_id",user_id);
-            AssetInspection.put("user_name",current_user_name);
-            AssetInspection.put("asset_id",assetId);
-            AssetInspection.put("asset_type_id",assetTypeId);
-            AssetInspection.put("regime",regimeId);
-            AssetInspection.put("asset_number",asset_number);
-            AssetInspection.put("asset_name",asset_name);
+    /**
+     * OPTIMIZED: Uses RegimeDefectModel instead of parallel ArrayLists
+     */
+    private void sendAssetInspectionSubmissionWMData() {
+        for (RegimeDefectModel defectModel : defectedRegimesList) {
+            final String inspectionIds = defectModel.getInspectionId();
+            final Map<String, Object> AssetInspection = new HashMap<>();
+
+            AssetInspection.put("user_id", user_id);
+            AssetInspection.put("user_name", current_user_name);
+            AssetInspection.put("asset_id", assetId);
+            AssetInspection.put("asset_type_id", assetTypeId);
+            AssetInspection.put("regime", regimeId);
+            AssetInspection.put("asset_number", asset_number);
+            AssetInspection.put("asset_name", asset_name);
             AssetInspection.put("assign_location", siteLocationId);
-            AssetInspection.put("inspection_id",all_defected_inspection_ids.get(i));
-            AssetInspection.put("user_role","WM");
-            AssetInspection.put("conducted_on",current_date);
-            AssetInspection.put("submission_time",current_time);
-            AssetInspection.put("id",all_defected_inspection_ids.get(i)+"_WM");
-            AssetInspection.put("z_image_one","");
-            AssetInspection.put("z_image_two","");
-            AssetInspection.put("defected","Yes");
-            AssetInspection.put("defect_inspection","Yes");
-            AssetInspection.put("asset_status","Defected not safe to use.");
-            AssetInspection.put("inspector_name","");
-            AssetInspection.put("z_inspector_sign","");
-            AssetInspection.put("status","Active");
-            AssetInspection.put("latitude",latitude);
-            AssetInspection.put("longitude",longitude);
-            AssetInspection.put("address",address);
+            AssetInspection.put("inspection_id", defectModel.getInspectionId());
+            AssetInspection.put("user_role", "WM");
+            AssetInspection.put("conducted_on", current_date);
+            AssetInspection.put("submission_time", current_time);
+            AssetInspection.put("id", defectModel.getInspectionId() + "_WM");
+            AssetInspection.put("z_image_one", "");
+            AssetInspection.put("z_image_two", "");
+            AssetInspection.put("defected", "Yes");
+            AssetInspection.put("defect_inspection", "Yes");
+            AssetInspection.put("asset_status", "Defected not safe to use.");
+            AssetInspection.put("inspector_name", "");
+            AssetInspection.put("z_inspector_sign", "");
+            AssetInspection.put("status", "Active");
+            AssetInspection.put("latitude", latitude);
+            AssetInspection.put("longitude", longitude);
+            AssetInspection.put("address", address);
             AssetInspection.put("wm_sign", "");
             AssetInspection.put("time_second_format", AppData.getTimeSecond());
-            AssetInspection.put("device_id",device_id);
-            AssetInspection.put("assign_user_status","Yes");
-            AssetInspection.put("site_type",site_type);
-                assetInspectionSubmissionReference.document(inspectionIds+"_WM").set(AssetInspection).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        Log.d("Response", "Form submitted successfully.");
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
+            AssetInspection.put("device_id", device_id);
+            AssetInspection.put("assign_user_status", "Yes");
+            AssetInspection.put("site_type", site_type);
+
+            assetInspectionSubmissionReference.document(inspectionIds + "_WM").set(AssetInspection)
+                    .addOnSuccessListener(aVoid -> Log.d("Response", "Form submitted successfully."))
+                    .addOnFailureListener(e -> {
                         progressDialog.dismiss();
                         Toast.makeText(CloseRegimeDefects.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
+                    });
+        }
     }
 
     private void setSignInspector() {
@@ -1061,8 +1058,7 @@ public class CloseRegimeDefects extends AppCompatActivity implements View.OnClic
 
     private void clearAllLists() {
         if (regimeElementsIds != null) regimeElementsIds.clear();
-        if (all_defected_inspection_ids != null) all_defected_inspection_ids.clear();
-        if (arraylist_defected_regime_value != null) arraylist_defected_regime_value.clear();
+        if (defectedRegimesList != null) defectedRegimesList.clear();
     }
     
     /**

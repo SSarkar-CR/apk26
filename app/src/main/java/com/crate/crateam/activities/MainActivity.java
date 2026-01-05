@@ -26,6 +26,8 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -71,12 +73,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static final String MIME_TEXT = "text/plain";
     public static final String TAG = "Nfc";
     private String message,user_image;
-    public static TextView tv_temp;
+    private TextView tv_temp;
     private TextView tv_logout,tv_header;
-    public static ImageView iv_weather;
+    private ImageView iv_weather;
     private ImageView iv_navigation,iv_home,iv_form,iv_crate,iv_notification,iv_favourites,iv_back_arrow,iv_user_image,iv_refresh,iv_cross;
     private DrawerLayout mDrawerLayout;
-    static SpotsDialog spotsDialog;
+    private SpotsDialog spotsDialog;
     Fragment fragment = null;
     private int select = 0, user_id = 0, role_id = 0, asset_role = 0, count = 0;
     private FragmentTransaction ft;
@@ -192,6 +194,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Log.d("LAUNCH :" , Objects.requireNonNull(fragment.getTag()));
         manageFragmentBackStack();
         checkPermission();
+        setupBackPressHandler();
     }
 
     private void initializeOnClick() {
@@ -350,26 +353,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
-    @Override
-    public void onBackPressed() {
-        FragmentManager fm = MainActivity.this.getSupportFragmentManager();
-        if (fm!=null) {
-            tag = fm.getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
-            Log.d("TAG:" , tag);
-            Log.d("BACK STACK ENTRY: " , String.valueOf(fm.getBackStackEntryCount()));
-            manageFragmentBackStack();
-            if (fm.getBackStackEntryCount()==1 || tag.equals("DASHBOARD")) {
-                onApplicationBackPressed();
-            }else if (tag.equals("FORM EXPAND")) {
-                super.onBackPressed();
-            }else if (tag.equals("INSPECTION") || tag.equals("WORKSHOP MANAGER")){
-
-            }else
-                getSupportFragmentManager().popBackStackImmediate();
-                tag = fm.getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
-                manageFragmentBackStack();
-        }
+    private void setupBackPressHandler() {
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                FragmentManager fm = MainActivity.this.getSupportFragmentManager();
+                if (fm!=null) {
+                    tag = fm.getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
+                    Log.d("TAG:" , tag);
+                    Log.d("BACK STACK ENTRY: " , String.valueOf(fm.getBackStackEntryCount()));
+                    manageFragmentBackStack();
+                    if (fm.getBackStackEntryCount()==1 || tag.equals("DASHBOARD")) {
+                        onApplicationBackPressed();
+                    }else
+                        getSupportFragmentManager().popBackStackImmediate();
+                    tag = fm.getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount() - 1).getName();
+                    manageFragmentBackStack();
+                }
+            }
+        });
     }
+
 
     public void getChildTag(String childTag){
         tag = childTag;
@@ -670,7 +674,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     public static void stopForegroundDispatch(final Activity activity, NfcAdapter adapter) {
         if (adapter != null)
-        adapter.disableForegroundDispatch(activity);
+           adapter.disableForegroundDispatch(activity);
     }
 
 //     get new intent ...

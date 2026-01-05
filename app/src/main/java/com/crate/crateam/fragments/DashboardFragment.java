@@ -122,7 +122,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         if (user_role != null)
            role_id = Integer.parseInt(user_role);
         Log.d("UserRole :",user_name+" "+ user_role+" "+user_id);
-        if (user_name != null || !user_name.isEmpty())
+        if (user_name != null && !user_name.isEmpty())
            tv_userName.setText(user_name);
         pref = getActivity().getSharedPreferences("MyPref", 0); //0 - for private mode
         editor = pref.edit();
@@ -528,7 +528,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
             manager_comment = "yes";
         if (contain_child_menu_options.contains("28"))
             ad_hoc_defect_report = "yes";
-        if (contain_child_menu_options.equals("29"))
+        if (contain_child_menu_options.contains("29"))
             view_ad_hoc = "yes";
         if (contain_child_menu_options.contains("30"))
             waste_transfer_form_operator = "yes";
